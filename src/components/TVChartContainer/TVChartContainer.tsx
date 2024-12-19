@@ -92,10 +92,10 @@ export default function TVChartContainer({
           .setLineStyle(1)
           .setLineLength(1)
           .setBodyFont(`normal 12pt "Relative", sans-serif`)
-          .setBodyTextColor("#fff")
-          .setLineColor("#3a3e5e")
-          .setBodyBackgroundColor("#3a3e5e")
-          .setBodyBorderColor("#3a3e5e");
+          .setBodyTextColor("#111")
+          .setLineColor("#111")
+          .setBodyBackgroundColor("#fff")
+          .setBodyBorderColor("#fff");
       }
     },
     [chartReady]
@@ -169,7 +169,7 @@ export default function TVChartContainer({
     tvWidgetRef.current!.onChartReady(function () {
       setChartReady(true);
       tvWidgetRef.current!.applyOverrides({
-        "paneProperties.background": "#16182e",
+        "paneProperties.background": "#7044DA",
         "paneProperties.backgroundType": "solid",
       });
       tvWidgetRef.current

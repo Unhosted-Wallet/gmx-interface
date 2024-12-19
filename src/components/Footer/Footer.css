@@ -1,7 +1,8 @@
 .Footer-wrapper {
   text-align: center;
   padding-top: 4rem;
-  background: var(--color-slate-800);
+  /* background: var(--color-slate-800); */
+  background: #7044da;
   width: 100vw;
   position: absolute;
   transform: translateX(-50%);
@@ -18,7 +19,7 @@
 }
 
 .Footer-logo img {
-  height: 2.65rem;
+  height: 5.65rem;
 }
 
 .Footer-social-link-block {
@@ -28,6 +29,7 @@
   margin-bottom: 2.4rem;
 }
 .Footer-link {
+  display: none;
   color: var(--color-slate-100);
   font-size: var(--font-size-body-small);
   line-height: var(--line-height-body-small);
@@ -83,6 +85,7 @@
 @media (max-width: 580px) {
   .Footer-links {
     flex-direction: column;
+    display: none;
   }
   .Footer-links > a {
     padding-right: 0;

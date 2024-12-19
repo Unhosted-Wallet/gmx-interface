@@ -30,7 +30,7 @@ export function AlertInfo({
 }: Props) {
   const Icon = type === "warning" ? WarnIconComponent : InfoIconComponent;
   return (
-    <div className={cx("AlertInfo", { smallMargin, noMargin }, textColor, className)} onClick={onClick}>
+    <div className={cx("AlertInfo", { smallMargin, noMargin }, "text-black", className)} onClick={onClick}>
       <div className="AlertInfo-icon">
         <Icon aria-label="Alert Icon" />
       </div>

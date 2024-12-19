@@ -1,3 +1,4 @@
+// 343330
 .App-header-backdrop {
   position: fixed;
   z-index: 10;
@@ -15,7 +16,8 @@
   position: relative;
   padding-left: 3.2rem;
   padding-right: 3.2rem;
-  background: transparent 0% 0% no-repeat padding-box;
+  // background: transparent 0% 0% no-repeat padding-box;
+  background: white;
   border-bottom: 1px solid var(--color-gray-950);
 }
 
@@ -32,6 +34,7 @@
 .App-header.large .App-header-links {
   display: flex;
   min-width: 0;
+  display: none;
 }
 
 .App-header-link-home {
@@ -51,11 +54,16 @@
   height: 100vh;
   width: 30.4rem;
   overflow-y: auto;
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  display: none;
+  scrollbar-width: none;
+  /* Firefox */
 }
+
 .App-header-drawer::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  display: none;
+  /* Safari and Chrome */
 }
 
 .App-header-drawer .App-header-link-container .a,
@@ -64,7 +72,9 @@
   line-height: var(--line-height-body-large);
   font-weight: normal;
   letter-spacing: 0.1px;
-  color: var(--color-slate-100);
+  // color: var(--color-slate-100);
+  color: black !important;
+  font-weight: bolder;
   padding: 1.5rem 1.6rem;
   text-decoration: none;
   display: block;
@@ -77,11 +87,16 @@
 .App-header-drawer .App-header-link-container a:focus,
 .App-header-drawer .App-header-link-container a.active {
   background: #303fd024;
-  color: var(--color-white);
+  // color: var(--color-white);
+  // color: #343330;
+  color: black !important;
+  font-weight: bolder;
 }
 
 .App-header.large .App-header-link-container {
   min-width: 0;
+  color: black !important;
+  font-weight: bolder;
 }
 
 .App-header-links-header {
@@ -108,7 +123,7 @@
 .App-header-menu-icon-block {
   margin-right: 1.2rem;
   margin-left: 0px;
-  display: flex;
+  display: none;
   align-items: center;
 }
 
@@ -135,7 +150,7 @@
 
 .App-header-link-main img {
   display: inline-block;
-  height: 2.15rem;
+  height: 4rem;
   vertical-align: middle;
 }
 
@@ -168,11 +183,12 @@
 .App-header-container-left a {
   padding: 1.8rem 1.7rem;
   display: block;
-  color: var(--color-slate-100);
+  color: black !important;
   font-size: var(--font-size-body-large);
   line-height: var(--line-height-body-large);
   font-weight: normal;
 }
+
 .App-header.large .App-header-container-left a {
   white-space: nowrap;
   overflow: hidden;
@@ -221,7 +237,7 @@
   border-radius: 0.4rem;
   display: inline-flex;
   align-items: center;
-  color: var(--color-white);
+  color: black;
   position: relative;
 }
 
@@ -256,7 +272,7 @@
   }
 
   .App-header-link-main img {
-    height: 2.1rem;
+    height: 4rem;
   }
 
   .App-header.small {
@@ -304,6 +320,7 @@
   .App-header-menu-icon-block {
     margin-left: 0;
     margin-right: 0.4rem;
+    display: none;
   }
 
   .App-header-menu-icon {
@@ -324,5 +341,6 @@
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .App-header-drawer {
     background: var(--color-slate-950);
+    display: none;
   }
 }

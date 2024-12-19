@@ -1,5 +1,6 @@
 .Suggestion-input-wrapper {
   position: relative;
+
   .Suggestion-list {
     position: absolute;
     display: flex;
@@ -9,7 +10,7 @@
     padding: 0;
     margin-top: 1.5px;
     top: 100%;
-    background: var(--color-slate-700);
+    background: var(--unhosted-purple);
     z-index: 1002;
 
     li {
@@ -17,17 +18,21 @@
       cursor: pointer;
       border-radius: var(--border-radius-sm);
       text-align: center;
+
       &:hover {
         background: rgba(58, 63, 121, 0.5607843137254902);
       }
     }
   }
+
   .Suggestion-input {
     border: 1px solid var(--color-slate-700);
     border-radius: var(--border-radius-sm);
     padding-right: 0.5rem;
     line-height: 1;
-    background: var(--color-slate-700);
+    // background: var(--color-slate-700);
+
+    background: var(--unhosted-purple);
 
     label {
       cursor: pointer;
@@ -37,6 +42,7 @@
     &:focus {
       border-color: var(--color-cold-blue-700);
     }
+
     &:focus-within {
       border-color: var(--color-cold-blue-500);
     }
@@ -52,6 +58,7 @@
       border-radius: 4px;
       max-width: 7rem;
     }
+
     span {
       opacity: 0.7;
     }

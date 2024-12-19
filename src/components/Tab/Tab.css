@@ -27,7 +27,7 @@
 
 .Tab.Tab__block .Tab-option:not(.disabled):not(.active):hover {
   color: var(--color-white);
-  background: var(--color-cold-blue-700);
+  /* background: var(--color-cold-blue-700); */
 }
 
 .Tab.Tab__block .Tab-option.active {
@@ -46,6 +46,7 @@
   white-space: nowrap;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
+  color: black;
 }
 
 .Tab.Tab__inline::-webkit-scrollbar {

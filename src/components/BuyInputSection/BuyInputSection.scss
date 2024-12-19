@@ -4,6 +4,7 @@
     justify-content: space-between;
     font-size: var(--font-size-body-medium);
   }
+
   .InputSection-static-input {
     font-size: var(--font-size-body-large);
   }
@@ -37,9 +38,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      // background-color: red;
     }
 
     .Exchange-swap-max {
+      display: none;
       position: unset;
       color: var(--color-white);
       font-size: var(--font-size-body-medium);
@@ -52,10 +55,14 @@
     }
 
     .PositionEditor-token-symbol {
+      color: black;
       display: flex;
       align-items: center;
       margin-left: 1rem;
       gap: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      padding: 2px;
+      border-radius: 0.5rem;
     }
 
     &-top {
