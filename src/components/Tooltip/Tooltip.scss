@@ -124,11 +124,12 @@ $left-arrow-bg: var(--color-slate-600);
   cursor: help;
   position: relative;
   display: inline-flex;
-  text-decoration: underline;
-  text-decoration-style: dashed;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  text-decoration-color: var(--color-gray-400);
+  color: black !important;
+  // text-decoration: underline;
+  // text-decoration-style: dashed;
+  // text-decoration-thickness: 1px;
+  // text-underline-offset: 2px;
+  // text-decoration-color: var(--color-gray-400);
 }
 
 .Tooltip-divider {
@@ -143,7 +144,7 @@ $left-arrow-bg: var(--color-slate-600);
   grid-template-columns: 1fr auto;
 }
 
-.Tooltip-row > span.label {
+.Tooltip-row>span.label {
   margin-right: 0.5rem;
 }
 

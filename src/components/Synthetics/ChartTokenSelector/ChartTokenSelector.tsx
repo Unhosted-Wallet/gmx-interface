@@ -102,7 +102,7 @@ export default function ChartTokenSelector(props: Props) {
               </span>
               {poolName && (
                 <span
-                  className={cx("text-body-small font-normal text-gray-300", {
+                  className={cx("text-body-small font-normal text-black", {
                     "ml-8": oneRowLabels,
                   })}
                 >
@@ -248,9 +248,13 @@ function MarketsList() {
     ? cx("px-6 first-of-type:pl-8 last-of-type:pr-8")
     : cx("px-5 first-of-type:pl-16 last-of-type:pr-16");
   const thClassName = cx(
-    "text-body-medium sticky top-0 z-10 whitespace-nowrap border-b border-slate-700 bg-slate-800 text-left font-normal uppercase text-gray-400",
-    "first-of-type:text-left last-of-type:[&:not(:first-of-type)]:text-right",
-    isMobile ? "first-of-type:!pl-40" : "first-of-type:!pl-37",
+
+    "text-body-medium sticky top-0 border-b text-left font-normal uppercase text-white first-of-type:text-left last-of-type:[&:not(:first-of-type)]:text-right",
+    rowVerticalPadding,
+    rowHorizontalPadding
+  );
+  const tdClassName = cx(
+    "text-body-medium cursor-pointer rounded-4 last-of-type:text-right hover:bg-[#7044DA] hover:text-white",
     rowVerticalPadding,
     rowHorizontalPadding
   );
@@ -312,7 +316,7 @@ function MarketsList() {
           })}
         >
           <table className="text-sm w-full border-separate border-spacing-0">
-            <thead className="bg-slate-800">
+            <thead className="bg-[#7044DA]">
               <tr>
                 <th className={thClassName} colSpan={2}>
                   <Trans>Market</Trans>
@@ -568,12 +572,19 @@ function MarketListItem({
 
   if (isSwap) {
     return (
-      <tr key={token.symbol} className="group/row cursor-pointer hover:bg-cold-blue-900">
-        <td className={cx("pl-16 pr-4 text-center", rowVerticalPadding)} onClick={handleFavoriteClick}>
+      <tr key={token.symbol} className="group/row">
+        <td
+          className={cx("cursor-pointer rounded-4 pl-16 pr-4 text-center text-black", rowVerticalPadding)}
+          onClick={handleFavoriteClick}
+        >
           <FavoriteStar isFavorite={isFavorite} />
         </td>
         <td
-          className={cx("text-body-medium w-full", rowVerticalPadding, rowHorizontalPadding)}
+          className={cx(
+            "text-body-medium w-full cursor-pointer rounded-4 hover:bg-[#7044DA] hover:text-white",
+            rowVerticalPadding,
+            rowHorizontalPadding
+          )}
           onClick={handleSelectLargePosition}
         >
           <span className="inline-flex items-center text-slate-100">
@@ -591,19 +602,25 @@ function MarketListItem({
   }
 
   return (
-    <tr
-      key={token.symbol}
-      className="group/row cursor-pointer hover:bg-cold-blue-900"
-      onClick={handleSelectLargePosition}
-    >
+    <tr key={token.symbol} className="group/row text-black">
       <td
-        className={cx("pr-4 text-center", rowVerticalPadding, isMobile ? "pl-8" : "pl-16")}
+        className={cx(
+          "cursor-pointer rounded-4 pl-16 pr-4 text-center hover:bg-[#7044DA] hover:text-white",
+          rowVerticalPadding
+        )}
         onClick={handleFavoriteClick}
       >
         <FavoriteStar isFavorite={isFavorite} />
       </td>
-      <td className={cx("text-body-medium pl-4", rowVerticalPadding, isMobile ? "pr-6" : "pr-8")}>
-        <div className="flex items-center">
+      <td
+        className={cx(
+          "text-body-medium cursor-pointer rounded-4 pl-4 hover:bg-[#7044DA] hover:text-white",
+          rowVerticalPadding,
+          isSmallMobile ? "pr-6" : "pr-8"
+        )}
+        onClick={handleSelectLargePosition}
+      >
+        <span className="inline-flex items-center text-slate-100">
           <TokenIcon
             className="ChartToken-list-icon -my-5 mr-8"
             symbol={token.symbol}

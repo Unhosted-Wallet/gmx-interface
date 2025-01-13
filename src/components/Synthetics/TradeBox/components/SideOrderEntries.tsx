@@ -121,7 +121,7 @@ function SideOrderEntry({
         disableHandleStyle
       >
         <div
-          className={cx("group relative rounded-4 border border-solid bg-slate-700 pl-5 leading-1 ", {
+          className={cx("bg-purple group relative rounded-4 border border-solid pl-5 leading-1 ", {
             "border-red-500": !!priceError,
             "border-slate-700": !priceError,
             "focus-within:border-cold-blue-500": !priceError,
@@ -129,7 +129,7 @@ function SideOrderEntry({
             "hover:focus-within:border-cold-blue-500": !priceError,
           })}
         >
-          <span className="cursor-pointer opacity-70">$</span>
+          <span className="cursor-pointer text-white opacity-70">$</span>
 
           <NumberInput
             value={entry.price.input}
@@ -153,7 +153,7 @@ function SideOrderEntry({
           >
             <SuggestionInput
               isError={!!percentageError}
-              inputClassName="w-48"
+              inputClassName="w-48 bg-purple text-white"
               value={entry.percentage?.input ?? ""}
               setValue={onPercentageSetValue}
               placeholder="Size"

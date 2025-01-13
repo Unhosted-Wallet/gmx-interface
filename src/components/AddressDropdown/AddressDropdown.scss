@@ -6,7 +6,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: white !important;
+  // color: white !important;
+  // background: red;
 }
 
 .user-address {
@@ -33,7 +34,7 @@
   transform-origin: top right;
   border-radius: 0.4rem;
   overflow: hidden;
-  background: var(--color-slate-800);
+  background: white;
   border: 1px solid var(--color-gray-800);
   list-style: none;
   cursor: pointer;
@@ -43,26 +44,27 @@
   .menu-item {
     display: flex !important;
     align-items: center;
-    color: var(--color-slate-100);
+    // color: var(--color-slate-100);
+    color: black;
     padding-bottom: 1.5rem;
     font-size: var(--font-size-body-medium);
     padding: 0.85rem 0.8rem;
     border-radius: 0.4rem;
 
     &:hover {
-      background: #808aff14 !important;
+      // background: #808aff14 !important;
       border-radius: 0.4rem;
-      opacity: 1;
-      color: var(--color-gray-50);
+      // opacity: 1;
+      // color: var(--color-gray-50);
     }
 
-    > p {
+    >p {
       margin: 0px;
       padding-left: 1rem;
       white-space: nowrap;
     }
 
-    > a {
+    >a {
       display: inline-flex;
     }
   }

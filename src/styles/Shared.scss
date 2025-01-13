@@ -63,10 +63,13 @@ input {
 ::-webkit-scrollbar-thumb:hover {
   background: #b3b4c2;
 }
+
+// --main-bg-color: var(--color-slate-900)
 :root {
-  --main-bg-color: var(--color-slate-900);
+  --main-bg-color: white;
   --dark-blue: var(--color-slate-800);
-  --dark-blue-bg: var(--color-slate-800);
+  // --dark-blue-bg: var(--color-slate-800);
+  --dark-blue-bg: white;
   --dark-blue-accent: var(--color-slate-100);
   --primary-btn-bg: var(--color-blue-600);
   --primary-btn-hover: var(--color-blue-400);
@@ -82,7 +85,7 @@ input {
   --error-red: var(--color-red-500);
   --error-red-hover: var(--color-red-400);
   --green: var(--color-green-500);
-
+  --unhosted-purple: #7044DA;
   --default-container-max-width: 126.4rem;
   --default-container-padding: 3.2rem;
   --default-container-padding-mobile: 1rem;
@@ -186,13 +189,14 @@ a.plain {
 }
 
 .default-btn {
-  background: var(--color-blue-600);
+  background-color: rgb(204, 251, 130);
   border-radius: 4px;
   font-size: var(--font-size-body-medium);
   line-height: 2rem;
   font-weight: normal;
   letter-spacing: 0px;
-  color: var(--color-white) !important;
+  // color: var(--color-white) !important;
+  color: black !important;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
   /* padding: 9px 16px!important; */
@@ -372,7 +376,7 @@ button.btn-link:hover .logout-icon {
   cursor: default;
 }
 
-.gap-right > *:not(:last-child) {
+.gap-right>*:not(:last-child) {
   margin-right: 1rem;
 }
 
@@ -401,7 +405,7 @@ a:hover .text-red {
   }
 }
 
-.gap-right-xs > *:not(:last-child) {
+.gap-right-xs>*:not(:last-child) {
   margin-right: 0.5rem;
 }
 

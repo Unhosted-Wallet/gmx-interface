@@ -67,7 +67,7 @@ export function ExpandableRow({
   return (
     <div
       className={cx("-mx-15 px-15 py-[1.05rem]", className, {
-        "bg-slate-900": open && !hideExpand,
+        "bg-white": open && !hideExpand,
       })}
     >
       {!hideExpand && (

@@ -7,7 +7,7 @@
 }
 
 .Claims-card {
-  background: var(--color-slate-800);
+  background: #7044DA;
   font-size: var(--font-size-body-medium);
   margin-bottom: 0.8rem;
   padding-bottom: 1rem;
@@ -28,7 +28,7 @@
   padding: 1rem 0;
 }
 
-.Claims-col + .Claims-col {
+.Claims-col+.Claims-col {
   margin-left: 3rem;
 }
 
@@ -75,6 +75,7 @@
   background-color: transparent;
 
   color: var(--color-gray-300);
+
   &:hover {
     color: var(--color-white);
   }

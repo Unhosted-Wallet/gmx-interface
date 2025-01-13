@@ -82,7 +82,7 @@ export default function SuggestionInput({
           onValueChange={handleChange}
           onKeyDown={handleKeyDown}
         />
-        <label>
+        <label className="bg-purple text-white">
           <span>{symbol}</span>
         </label>
       </div>

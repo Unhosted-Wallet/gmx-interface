@@ -1,5 +1,5 @@
 .connect-wallet-btn {
-  background: transparent;
+  background: #7044DA;
   padding: 0.85rem 1.4rem;
   display: inline-flex;
   align-items: center;
@@ -16,17 +16,20 @@
     align-items: center;
     justify-content: center;
   }
+
   .btn-label {
     font-weight: 400;
     font-size: var(--font-size-body-medium);
     margin-left: 0.8rem;
     letter-spacing: 0;
   }
+
   &:hover {
-    background: var(--dark-blue-hover);
+    // background: var(--dark-blue-hover);
   }
+
   &:active {
-    background: var(--dark-blue-active);
+    // background: var(--dark-blue-active);
   }
 }
 
@@ -39,9 +42,11 @@
 @media (max-width: 350px) {
   .connect-wallet-btn {
     height: 3.6rem;
+
     .btn-icon {
       display: none;
     }
+
     .btn-label {
       margin-left: 0px;
     }
