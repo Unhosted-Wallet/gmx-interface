@@ -248,7 +248,6 @@ function MarketsList() {
     ? cx("px-6 first-of-type:pl-8 last-of-type:pr-8")
     : cx("px-5 first-of-type:pl-16 last-of-type:pr-16");
   const thClassName = cx(
-
     "text-body-medium sticky top-0 border-b text-left font-normal uppercase text-white first-of-type:text-left last-of-type:[&:not(:first-of-type)]:text-right",
     rowVerticalPadding,
     rowHorizontalPadding
@@ -258,7 +257,6 @@ function MarketsList() {
     rowVerticalPadding,
     rowHorizontalPadding
   );
-  const tdClassName = cx("text-body-medium last-of-type:text-right", rowVerticalPadding, rowHorizontalPadding);
 
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -616,7 +614,7 @@ function MarketListItem({
         className={cx(
           "text-body-medium cursor-pointer rounded-4 pl-4 hover:bg-[#7044DA] hover:text-white",
           rowVerticalPadding,
-          isSmallMobile ? "pr-6" : "pr-8"
+          "pr-8"
         )}
         onClick={handleSelectLargePosition}
       >
@@ -629,11 +627,11 @@ function MarketListItem({
           />
           <span className="flex flex-wrap items-center gap-4">
             <span className="-mt-2 leading-1">{getMarketIndexName({ indexToken: token, isSpotOnly: false })}</span>
-            <span className="text-body-small rounded-2 bg-slate-700 px-2 pb-3 pt-1 leading-1">
+            <span className="text-body-small rounded-2 bg-[#7044DA] px-2 pb-3 pt-1 leading-1 text-white">
               {maxLeverage ? `${maxLeverage}x` : "-"}
             </span>
           </span>
-        </div>
+        </span>
       </td>
 
       <td className={tdClassName}>
