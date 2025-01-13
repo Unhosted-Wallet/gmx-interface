@@ -169,7 +169,7 @@ export default function TVChartContainer({
     tvWidgetRef.current!.onChartReady(function () {
       setChartReady(true);
       tvWidgetRef.current!.applyOverrides({
-        "paneProperties.background": "#7044DA",
+        // "paneProperties.background": "slate-900",
         "paneProperties.backgroundType": "solid",
       });
       tvWidgetRef.current

@@ -45,8 +45,8 @@ function AddressDropdown({ account, accountUrl, disconnectAccountAndCloseSetting
 
   return (
     <Menu>
-      <Menu.Button as="div">
-        <button className="App-cta small transparent address-btn">
+      <Menu.Button className="hover:bg-[#7044DA] hover:rounded-[.03rem]" as="div">
+        <button className="App-cta small address-btn">
           <div className="user-avatar">
             <Avatar size={20} ensName={ensName} address={account} />
           </div>
@@ -70,14 +70,14 @@ function AddressDropdown({ account, accountUrl, disconnectAccountAndCloseSetting
               </p>
             </div>
           </Menu.Item>
-          <Menu.Item>
+          {/* <Menu.Item>
             <Link className="menu-item" to={buildAccountDashboardUrl(account as Address, undefined, 2)}>
               <PnlAnalysisIcon width={20} className="size-20" />
               <p>
                 <Trans>PnL Analysis</Trans>
               </p>
             </Link>
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item>
             <ExternalLink href={accountUrl} className="menu-item">
               <img width={20} className="size-20" src={externalLink} alt="Open address in explorer" />
