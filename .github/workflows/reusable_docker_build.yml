@@ -1,0 +1,77 @@
+name: Reusable component to build docker image and push to ECR
+on:
+  workflow_call:
+    inputs:
+      image_name:
+        description: "Name of the docker image"
+        required: true
+        type: string
+      dockerfile:
+        description: "Name of the dockerfile inside the dockerfiles folder"
+        required: true
+        type: string
+      service_name:
+        description: "Raw name of the service to trigger config update"
+        required: true
+        type: string
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      PAT:
+        required: true
+jobs:
+  Build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Get commit hash
+        id: get-commit-hash
+        run: echo "::set-output name=commit-hash::$(git rev-parse --short HEAD)"
+      - name: Get timestamp
+        id: get-timestamp
+        run: echo "::set-output name=timestamp::$(date +'%Y-%m-%d-%H-%M')"
+
+      - name: Build, tag, and push the image to Amazon ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: ${{ inputs.image_name }}
+          IMAGE_TAG: ${{ steps.get-commit-hash.outputs.commit-hash }}-${{ steps.get-timestamp.outputs.timestamp }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f ${{ inputs.dockerfile }} .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      
+          
+
+      # - name: Trigger config update
+      #   uses: peter-evans/repository-dispatch@v3
+      #   env:
+      #     ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+      #     ECR_REPOSITORY: ${{ inputs.image_name }}
+      #     IMAGE_TAG: ${{ steps.get-commit-hash.outputs.commit-hash }}-${{ steps.get-timestamp.outputs.timestamp }}
+      #     SERVICE: ${{inputs.service_name}}
+      #   with:
+      #     token: ${{ secrets.PAT }}
+      #     repository: Unhosted-Wallet/unhosted-infrastructure
+      #     event-type: image-push
+      #     client-payload: |
+      #       {
+      #         "app_name": "${{inputs.service_name}}",
+      #         "image_tag": "${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}"
+      #       }
