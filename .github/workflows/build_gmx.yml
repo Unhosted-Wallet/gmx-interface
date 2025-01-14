@@ -8,7 +8,7 @@ jobs:
     # We do not need to check out the repository to use the reusable workflow
     uses: ./.github/workflows/reusable_docker_build.yml
     with:
-      image_name: "unhosted_gmx"
+      image_name: "unhosted_backend_gmx"
       dockerfile: "Dockerfile"
       service_name: "gmx"
     secrets:
