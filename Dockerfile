@@ -2,6 +2,7 @@
 FROM node:20-alpine as builder
 
 ENV GENERATE_SOURCEMAP=false
+ENV NODE_ENV=production
 
 # Install python3 and build dependencies
 RUN apk add --no-cache python3 make g++ git
