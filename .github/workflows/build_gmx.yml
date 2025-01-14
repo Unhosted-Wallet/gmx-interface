@@ -2,7 +2,7 @@ name: Push the Docker image to AWS ECR Repo
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   build_gmx:
     # We do not need to check out the repository to use the reusable workflow
