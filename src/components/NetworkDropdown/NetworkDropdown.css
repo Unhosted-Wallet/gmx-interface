@@ -19,7 +19,7 @@
 .network-dropdown-items {
   min-width: 17rem;
   padding-bottom: 0.8rem;
-  background: white;
+  /* background: white; */
 }
 .network-dropdown-items:last-child {
   padding-bottom: 0;
@@ -72,6 +72,7 @@
 .menu-item-group {
   display: flex;
   align-items: center;
+  color: black;
 }
 
 .network-dropdown-menu-item {
@@ -91,7 +92,8 @@
 }
 .network-option {
   cursor: pointer;
-  background: var(--dark-blue);
+  background: white;
+  color: black;
   border: 1px solid var(--dark-blue-border);
   border-radius: 0.4rem;
   padding: 0.8rem 1.5rem;
@@ -114,7 +116,7 @@
   font-size: var(--font-size-body-medium);
   line-height: var(--line-height-body-medium);
   letter-spacing: 0.29px;
-  color: var(--color-white);
+  color: black;
 }
 
 .network-option-img-label {

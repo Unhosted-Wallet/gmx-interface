@@ -10,6 +10,7 @@ import ExternalLink from "components/ExternalLink/ExternalLink";
 import { UserFeedbackModal } from "../UserFeedbackModal/UserFeedbackModal";
 
 import logoImg from "img/ic_gmx_footer.svg";
+import logoImgGmx from "img/ic_gmx_footer_1.svg";
 
 import { TrackingLink } from "components/TrackingLink/TrackingLink";
 import { userAnalytics } from "lib/userAnalytics";
@@ -25,8 +26,13 @@ export default function Footer({ showRedirectModal, redirectPopupTimestamp }: Pr
   return (
     <>
       <div className={cx("Footer-wrapper", { home: isHome })}>
-        <div className="Footer-logo">
-          <img src={logoImg} alt="MetaMask" />
+        <div className="flex w-screen items-center justify-center gap-10">
+          <div className="Footer-logo">
+            <img src={logoImg} alt="MetaMask" />
+          </div>
+          <div className="Footer-logo">
+            <img className="w-80" src={logoImgGmx} alt="MetaMask" />
+          </div>
         </div>
         <div className="Footer-social-link-block">
           {SOCIAL_LINKS.map((platform) => {
