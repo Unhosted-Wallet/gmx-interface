@@ -1,12 +1,10 @@
 .App-header-network {
   position: relative;
-  border: 1px solid var(--dark-blue-border);
   border-radius: var(--border-radius-sm);
-  height: 3.6rem;
   display: inline-flex;
   align-items: center;
-  color: var(--color-white);
-  background: #7044da;
+  color: var(--main-text-color);
+  background: var(--unhosted-purple);
 }
 
 .App-header-language {

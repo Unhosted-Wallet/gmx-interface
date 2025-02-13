@@ -1,9 +1,10 @@
 import cx from "classnames";
-import { ExchangeInfo } from "components/Exchange/ExchangeInfo";
-import TooltipWithPortal from "components/Tooltip/TooltipWithPortal";
-import { usePrevious } from "lib/usePrevious";
+import { ExchangeInfo } from "../../Exchange/ExchangeInfo";
+import TooltipWithPortal from "../../Tooltip/TooltipWithPortal";
+import { usePrevious } from "../../../lib/usePrevious";
 import { ReactNode, useCallback, useEffect, useMemo } from "react";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import './ExpandableRow.css';
 
 interface Props {
   title: ReactNode;
@@ -66,14 +67,13 @@ export function ExpandableRow({
 
   return (
     <div
-      className={cx("-mx-15 px-15 py-[1.05rem]", className, {
-        "bg-white": open && !hideExpand,
-      })}
+      className={cx("-mx-15 px-15 py-[1.05rem]", className)}
     >
       {!hideExpand && (
         <ExchangeInfo.Row
-          className={cx("group !items-center hover:text-blue-300", open ? "!mb-12" : "!mb-0", {
+          className={cx("group !items-center hover:text-blue-300", open ? "!mb-8" : "!mb-0", {
             "cursor-not-allowed": disabled,
+            'exchange-info-row-active': open
           })}
           onClick={disabled ? undefined : handleOnClick}
           label={<span className="flex flex-row justify-between align-middle group-hover:text-blue-300">{label}</span>}
@@ -87,7 +87,7 @@ export function ExpandableRow({
         />
       )}
       <div
-        className={cx({
+        className={cx('expandable-row-additional-info', {
           hidden: !open,
         })}
       >

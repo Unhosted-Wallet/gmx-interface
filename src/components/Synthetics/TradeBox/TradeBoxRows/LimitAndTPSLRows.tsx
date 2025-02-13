@@ -1,6 +1,6 @@
 import { t, Trans } from "@lingui/macro";
 import { ExchangeInfo } from "components/Exchange/ExchangeInfo";
-import { ExpandableRow } from "components/Synthetics/ExpandableRow";
+import { ExpandableRow } from "../../ExpandableRow/ExpandableRow";
 import {
   selectTradeboxAdvancedOptions,
   selectTradeboxSetAdvancedOptions,
