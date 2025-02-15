@@ -22,9 +22,12 @@ on:
       PAT:
         required: true
 jobs:
-  Build:
-    name: Build
+  build:
+    name: build
     runs-on: ubuntu-latest
+    outputs:
+      IMAGE_TAG: ${{ steps.get-commit-hash.outputs.commit-hash }}-${{ steps.get-timestamp.outputs.timestamp }}
+      SERVICE: ${{inputs.service_name}}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -57,21 +60,43 @@ jobs:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f ${{ inputs.dockerfile }} .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
       
-          
+  deploy-stg:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger config update
+        uses: peter-evans/repository-dispatch@v3
+        env:
+          IMAGE_TAG: ${{ needs.build.outputs.IMAGE_TAG }}
+          SERVICE: ${{ needs.build.outputs.SERVICE }}
+        with:
+          token: ${{ secrets.PAT }}
+          repository: Unhosted-Wallet/unhosted-infrastructure
+          event-type: image-push
+          client-payload: |
+            {
+              "app_name": "${{inputs.service_name}}",
+              "image_tag": "${{ env.IMAGE_TAG }}",
+              "env": "stg"
+            }
 
-      # - name: Trigger config update
-      #   uses: peter-evans/repository-dispatch@v3
-      #   env:
-      #     ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-      #     ECR_REPOSITORY: ${{ inputs.image_name }}
-      #     IMAGE_TAG: ${{ steps.get-commit-hash.outputs.commit-hash }}-${{ steps.get-timestamp.outputs.timestamp }}
-      #     SERVICE: ${{inputs.service_name}}
-      #   with:
-      #     token: ${{ secrets.PAT }}
-      #     repository: Unhosted-Wallet/unhosted-infrastructure
-      #     event-type: image-push
-      #     client-payload: |
-      #       {
-      #         "app_name": "${{inputs.service_name}}",
-      #         "image_tag": "${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}"
-      #       }
+  deploy-prod:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Trigger config update
+        uses: peter-evans/repository-dispatch@v3
+        env:
+          IMAGE_TAG: ${{ needs.build.outputs.IMAGE_TAG }}
+          SERVICE: ${{ needs.build.outputs.SERVICE }}
+        with:
+          token: ${{ secrets.PAT }}
+          repository: Unhosted-Wallet/unhosted-infrastructure
+          event-type: image-push
+          client-payload: |
+            {
+              "app_name": "${{inputs.service_name}}",
+              "image_tag": "${{ env.IMAGE_TAG }}",
+              "env": "prod"
+            } 
