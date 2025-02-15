@@ -4,7 +4,7 @@
   display: inline-flex;
   align-items: center;
   color: var(--main-text-color);
-  background: var(--unhosted-purple);
+  background: var(--main-bg-color);
 }
 
 .App-header-language {
@@ -13,6 +13,8 @@
 
 .network-dropdown {
   display: inline-flex;
+  background-color: var(--unhosted-purple);
+  border-radius: var(--border-radius-sm);
 }
 .network-dropdown-items {
   min-width: 17rem;
@@ -70,7 +72,6 @@
 .menu-item-group {
   display: flex;
   align-items: center;
-  color: black;
 }
 
 .network-dropdown-menu-item {
@@ -90,9 +91,8 @@
 }
 .network-option {
   cursor: pointer;
-  background: white;
-  color: black;
-  border: 1px solid var(--dark-blue-border);
+  background: var(--main-bg-color);
+  border: 1px solid var(--border-color);
   border-radius: 0.4rem;
   padding: 0.8rem 1.5rem;
   display: flex;
@@ -100,7 +100,18 @@
   position: relative;
   justify-content: space-between;
   margin-bottom: 0.8rem;
+  &:hover {
+    border-color: var(--border-color-lighter);
+  }
+  &:active {
+    border-color: var(--border-color-lighter);
+  }
 }
+
+.network-option.active {
+  border-color: var(--border-color-lightest) !important;
+}
+
 .network-option:last-child {
   margin-bottom: 0;
 }
@@ -114,7 +125,6 @@
   font-size: var(--font-size-body-medium);
   line-height: var(--line-height-body-medium);
   letter-spacing: 0.29px;
-  color: black;
 }
 
 .network-option-img-label {
@@ -138,12 +148,19 @@
 }
 
 .language-modal-item {
-  border: 1px solid var(--dark-blue-border);
+  border: 1px solid var(--border-color);
   cursor: pointer;
+  border-radius: var(--border-radius-sm);
+  &:hover {
+    border-color: var(--border-color-lighter);
+  }
+  &:active {
+    border-color: var(--border-color-lighter);
+  }
 }
 
 .language-modal-item.active {
-  border: 1px solid #a1a3c4;
+  border: 1px solid var(--border-color-lightest) !important;
 }
 
 .menu-item-icon {

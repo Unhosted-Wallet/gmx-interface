@@ -197,7 +197,7 @@ function NetworkModalContent({ networkOptions, selectorLabel, setActiveModal, op
 
         {networkOptions.map((network) => {
           return (
-            <div className="network-option" onClick={() => switchNetwork(network.value, active)} key={network.value}>
+            <div className={cx("network-option", { 'active': selectorLabel === network.label})} onClick={() => switchNetwork(network.value, active)} key={network.value}>
               <div className="menu-item-group">
                 <img src={network.icon} alt={network.label} />
                 <span>{network.label}</span>

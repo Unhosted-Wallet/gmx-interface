@@ -144,10 +144,10 @@ $app-card-padding: 1.5rem;
   border-radius: 0.4rem;
   // background: var(--color-slate-800);
   // background: gray;
-  border: 1px solid black;
-  color: black !important;
+  border: 1px solid var(--border-color);
+  color: var(--main-text-color) !important;
   font-size: var(--font-size-body-medium);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: var(--shadow-color) 2px 2px 0 0;
 }
 
 .App-card-space-between {

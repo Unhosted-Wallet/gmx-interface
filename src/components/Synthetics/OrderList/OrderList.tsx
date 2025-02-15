@@ -158,9 +158,9 @@ export function OrderList({
   }, []);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className='App-box'>
       {isContainerSmall && orders.length === 0 && (
-        <div className="rounded-4 bg-white p-14 text-black">{isLoading ? t`Loading...` : t`No open orders`}</div>
+        <div className="rounded-4 p-14">{isLoading ? t`Loading...` : t`No open orders`}</div>
       )}
 
       {(isContainerSmall || isScreenSmall) && !isLoading && orders.length !== 0 && (

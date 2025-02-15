@@ -58,9 +58,8 @@
   display: grid;
   grid-template-columns: 1fr auto;
   grid-gap: 1.5rem;
-  padding-top: 0rem;
   margin-top: -1.5rem;
-  padding: 0 1rem;
+  padding: 0 16px;
 }
 
 .Exchange-position-list-orders {
