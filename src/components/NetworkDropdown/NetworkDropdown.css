@@ -19,7 +19,6 @@
 .network-dropdown-items {
   min-width: 17rem;
   padding-bottom: 0.8rem;
-  /* background: white; */
 }
 .network-dropdown-items:last-child {
   padding-bottom: 0;
@@ -135,7 +134,6 @@
 }
 
 .dropdown-label {
-  color: black;
   padding: 0.8rem;
   font-size: var(--font-size-body-small);
   line-height: var(--line-height-body-small);
