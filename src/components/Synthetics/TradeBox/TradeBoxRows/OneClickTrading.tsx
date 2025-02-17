@@ -170,19 +170,19 @@ export function TradeBoxOneClickTrading() {
         className="!items-center"
         value={
           <span className="flex flex-row items-center justify-center gap-4 whitespace-nowrap">
-            <Button variant="link" type="button" disabled={!clickable} onClick={jumpToSubaccount}>
+            <Button variant="link" type="button" disabled={!clickable} onClick={jumpToSubaccount} className='!text-[#976CFF]'>
               {buttonText}
             </Button>
             {onCloseClick && (
               <button
                 className={cx(
-                  "-my-4 rounded-4 p-4 text-black"
+                  "-my-4 rounded-4 p-4 text-[#976CFF]"
                   // "hover:bg-[#50577e99] hover:text-slate-100 focus:bg-[#50577e99] focus:text-slate-100",
                   // "active:bg-[#50577eb3] active:text-gray-300"
                 )}
                 onClick={onCloseClick}
               >
-                <CrossIconComponent className="w-16 text-black" />
+                <CrossIconComponent className="w-16" />
               </button>
             )}
           </span>

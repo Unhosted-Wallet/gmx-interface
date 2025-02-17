@@ -1,11 +1,23 @@
 .SwapBox {
-  border-radius: 0.4rem;
+  border-radius: var(--border-radius-md);
   padding: 1.5rem;
+  background-color: var(--main-bg-color);
+  border: 1px solid var(--border-color);
+}
+
+.SwapBox-option-tabs.Tab__block {
+  background: var(--unhosted-purple-darker);
+  padding: 4px;
+  border-radius: var(--border-radius-sm);
 }
 
 .SwapBox-option-tabs.Tab.Tab__block .Tab-option {
   padding: 1.05rem;
-  background: #7044DA;
+  border-radius: var(--border-radius-sm);
+}
+
+.SwapBox-option-tabs.Tab.Tab__block .Tab-option.active {
+  background-color: var(--unhosted-purple);
 }
 
 .SwapBox-option-tabs.Tab.Tab__block .Tab-option-icon {
@@ -45,11 +57,11 @@
 }
 
 .SwapBox-info-section {
-  margin-bottom: 1.1rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  border: 1px solid black;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 0.8rem;
+  color: var(--main-text-color);
 }
 
 .SwapBox-info-row {

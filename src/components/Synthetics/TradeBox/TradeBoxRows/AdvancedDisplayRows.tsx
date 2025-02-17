@@ -1,7 +1,7 @@
 import { Trans, t } from "@lingui/macro";
 import { ExchangeInfo } from "components/Exchange/ExchangeInfo";
 import { AcceptablePriceImpactInputRow } from "components/Synthetics/AcceptablePriceImpactInputRow/AcceptablePriceImpactInputRow";
-import { ExpandableRow } from "components/Synthetics/ExpandableRow";
+import { ExpandableRow } from "../../ExpandableRow/ExpandableRow";
 import ToggleSwitch from "components/ToggleSwitch/ToggleSwitch";
 import { ValueTransition } from "components/ValueTransition/ValueTransition";
 import {

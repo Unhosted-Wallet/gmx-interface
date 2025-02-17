@@ -283,7 +283,7 @@ function TenderlySettings({ isSettingsVisible }: { isSettingsVisible: boolean })
   return (
     <div className="w-full text-12">
       <br />
-      <h1 className="text-14">Tenderly Settings</h1>
+      <h1 className="text-16 Settings-Tenderly-Title">Tenderly Settings</h1>
       <br />
       <TenderlyInput name="Account" placeholder="account" value={accountSlug} onChange={setTenderlyAccountSlug} />
       <TenderlyInput name="Project" placeholder="project" value={projectSlug} onChange={setTenderlyProjectSlug} />
@@ -322,13 +322,13 @@ function TenderlyInput({
   );
 
   return (
-    <p className="mb-12 flex items-center justify-between gap-6">
-      <span>{name}</span>
+    <p>
+      <span className='text-14'>{name}</span>
       <input
         value={value}
         onChange={handleChange}
         placeholder={placeholder}
-        className="w-[280px] border border-gray-800 px-5 py-4 text-12"
+        className="w-full border border-gray-800 px-5 py-12 text-14 rounded-4 Settings-Tenderly-Input"
       />
     </p>
   );

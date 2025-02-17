@@ -42,11 +42,16 @@
 }
 
 .Tab.Tab__inline {
-  overflow-x: scroll;
+  overflow-y: visible;
+  overflow-x: auto;
   white-space: nowrap;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
-  color: black;
+  color: var(--main-text-color);
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  padding-block: 2px;
 }
 
 .Tab.Tab__inline::-webkit-scrollbar {
@@ -55,17 +60,24 @@
 
 .Tab.Tab__inline .Tab-option {
   display: inline-block;
-  margin-right: 1.5rem;
   font-size: var(--font-size-body-medium);
+  padding: .8rem;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-sm);
+  color: var(--secondary-text-color);
+  transition: color 0.2s ease, border-color 0.2s ease
 }
 
+
 .Tab.Tab__inline .Tab-option:not(.disabled):not(.active):hover {
-  opacity: 0.8;
+  color: var(--main-text-color)
 }
 
 .Tab.Tab__inline .Tab-option.active {
-  opacity: 1;
   pointer-events: none;
+  border: 1px solid var(--main-text-color);
+  color: var(--main-text-color);
+  box-shadow: 2px 2px 0 0 var(--shadow-color);
 }
 
 .Tab-option {

@@ -1460,7 +1460,7 @@ export function TradeBox(p: Props) {
             onChange={onSelectTradeMode}
             qa="trade-mode"
           />
-          <form onSubmit={handleFormSubmit} ref={formRef}>
+          <form onSubmit={handleFormSubmit} ref={formRef} className="grid gap-8">
             {(isSwap || isIncrease) && renderTokenInputs()}
             {isTrigger && renderDecreaseSizeInput()}
 

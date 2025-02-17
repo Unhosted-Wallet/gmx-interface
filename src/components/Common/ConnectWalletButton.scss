@@ -1,14 +1,12 @@
 .connect-wallet-btn {
-  background: #7044DA;
+  background: var(--unhosted-purple);
   padding: 0.85rem 1.4rem;
   display: inline-flex;
   align-items: center;
-  border: none;
-  color: var(--color-white);
+  color: var(--main-text-color);
   font-size: var(--font-size-body-medium);
   white-space: nowrap;
   cursor: pointer;
-  border: 1px solid var(--dark-blue-border);
   border-radius: var(--border-radius-sm);
 
   .btn-icon {

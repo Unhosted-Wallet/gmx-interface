@@ -1,0 +1,9 @@
+.exchange-info-row-active > * {
+  color: var(--unhosted-purple-lighter) !important;
+}
+
+.expandable-row-additional-info {
+  border-top: 1px solid var(--secondary-text-color);
+  padding-top: 8px;
+  padding-inline: 4px;
+}

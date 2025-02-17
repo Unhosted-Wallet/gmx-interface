@@ -17,11 +17,19 @@
   position: relative;
 }
 
+.Settings-Tenderly-Input,
 .App-slippage-tolerance-input {
-  border: 1px solid var(--color-gray-900);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
   width: 100%;
+  &:hover {
+    border-color: var(--border-color-lighter);
+  }
+  &:focus {
+    border-color: var(--border-color-lightest);
+  }
 
   &.with-minus {
     padding-left: 2.5rem;
@@ -45,4 +53,10 @@
 
 .settings-modal-error {
   padding-bottom: 0.7rem;
+}
+
+.Settings-Tenderly-Title {
+  padding-bottom: .4rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--border-color);
 }

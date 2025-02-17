@@ -59,6 +59,11 @@ const colors = {
   white: "#ffffff",
   black: "#000000",
   purple: "#7044DA",
+
+  main: {
+    bg: 'var(--main-bg-color)',
+    text: 'var(--main-text-color)',
+  }
 };
 
 /**

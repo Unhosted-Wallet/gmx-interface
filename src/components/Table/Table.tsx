@@ -6,7 +6,7 @@ interface TableTdThProps extends PropsWithChildren, React.HTMLProps<HTMLTableCel
 }
 
 export function Table(props: PropsWithChildren & React.HTMLProps<HTMLTableElement>) {
-  return <table {...props} className={cx("w-full rounded-4 bg-white", props.className)} />;
+  return <table {...props} className={cx('App-box', "w-full rounded-4 bg-main-bg text-main-text", props.className)} />;
 }
 export function TableTh(props: TableTdThProps) {
   const { padding = "all", ...rest } = props;
@@ -14,7 +14,7 @@ export function TableTh(props: TableTdThProps) {
   return (
     <th
       {...rest}
-      className={cx("text-left font-normal uppercase text-black last-of-type:text-right", props.className, {
+      className={cx("text-left font-normal uppercase last-of-type:text-right", props.className, {
         "px-4 py-12 first-of-type:pl-16 last-of-type:pr-16": padding === "all",
         "px-4 first-of-type:pl-16 last-of-type:pr-16": padding === "horizontal",
         "py-12": padding === "vertical",
@@ -62,7 +62,7 @@ export function TableTd(props: TableTdThProps) {
   return (
     <td
       {...rest}
-      className={cx("text-black last-of-type:[&:not(:first-of-type)]:text-right", props.className, {
+      className={cx("last-of-type:[&:not(:first-of-type)]:text-right", props.className, {
         "px-4 py-12 first-of-type:pl-16 last-of-type:pr-16": padding === "all",
         "px-4 first-of-type:pl-16 last-of-type:pr-16": padding === "horizontal",
         "py-12": padding === "vertical",

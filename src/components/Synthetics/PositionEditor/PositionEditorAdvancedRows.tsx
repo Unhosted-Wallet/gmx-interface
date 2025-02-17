@@ -12,7 +12,7 @@ import { useState } from "react";
 
 import { usePositionEditorPosition } from "context/SyntheticsStateContext/hooks/positionEditorHooks";
 
-import { ExpandableRow } from "../ExpandableRow";
+import { ExpandableRow } from "../ExpandableRow/ExpandableRow";
 import { usePositionEditorData } from "./hooks/usePositionEditorData";
 import { Options } from "./hooks/usePositionEditorFees";
 import { useSelector } from "context/SyntheticsStateContext/utils";

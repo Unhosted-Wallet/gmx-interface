@@ -28,7 +28,7 @@ import {
 import { selectTradeboxAdvancedOptions } from "context/SyntheticsStateContext/selectors/tradeboxSelectors";
 import { useSelector } from "context/SyntheticsStateContext/utils";
 
-import { ExpandableRow } from "../ExpandableRow";
+import { ExpandableRow } from "../ExpandableRow/ExpandableRow";
 
 export type Props = {
   triggerPriceInputValue: string;

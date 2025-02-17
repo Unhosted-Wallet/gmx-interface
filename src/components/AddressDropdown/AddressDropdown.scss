@@ -15,16 +15,6 @@
   margin-right: 1rem;
 }
 
-.App-header-user-address {
-  &:hover {
-    background: #808aff14;
-  }
-
-  &:active {
-    background: var(--dark-blue-active);
-  }
-}
-
 .menu-items {
   position: absolute;
   right: 0;
@@ -32,9 +22,8 @@
   min-width: 17rem;
   width: 100%;
   transform-origin: top right;
-  border-radius: 0.4rem;
   overflow: hidden;
-  background: white;
+  background: var(--main-bg-color);
   border: 1px solid var(--color-gray-800);
   list-style: none;
   cursor: pointer;
@@ -45,17 +34,12 @@
     display: flex !important;
     align-items: center;
     // color: var(--color-slate-100);
-    color: black;
-    padding-bottom: 1.5rem;
+    color: var(--main-text-color);
     font-size: var(--font-size-body-medium);
     padding: 0.85rem 0.8rem;
-    border-radius: 0.4rem;
 
     &:hover {
-      // background: #808aff14 !important;
-      border-radius: 0.4rem;
-      // opacity: 1;
-      // color: var(--color-gray-50);
+      background-color: var(--border-color);
     }
 
     >p {
