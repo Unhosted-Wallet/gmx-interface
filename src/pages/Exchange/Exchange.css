@@ -6,6 +6,7 @@
 
 .Exchange-left {
   overflow: hidden;
+  padding-inline-end: 2px;
 }
 
 .Exchange-trigger-order-info {

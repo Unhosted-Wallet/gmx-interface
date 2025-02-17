@@ -102,7 +102,7 @@ export default function ChartTokenSelector(props: Props) {
               </span>
               {poolName && (
                 <span
-                  className={cx("text-body-small font-normal text-black", {
+                  className={cx("text-body-small font-normal", {
                     "ml-8": oneRowLabels,
                   })}
                 >
