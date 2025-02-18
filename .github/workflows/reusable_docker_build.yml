@@ -81,7 +81,7 @@ jobs:
             }
 
   deploy-prod:
-    needs: build
+    needs: [build, deploy-stg]
     runs-on: ubuntu-latest
     steps:
 
