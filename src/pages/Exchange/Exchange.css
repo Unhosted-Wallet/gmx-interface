@@ -3,7 +3,8 @@
   margin: auto;
   justify-content: space-between;
   padding-block-end: calc(var(--footer-height) + 24px);
-  min-height: calc(100vh - var(--footer-height));
+  /* TODO: Disable and check in ultrawide screens */
+  /*min-height: calc(100vh - var(--footer-height));*/
 }
 
 .Exchange-left {
