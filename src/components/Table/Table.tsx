@@ -6,7 +6,7 @@ interface TableTdThProps extends PropsWithChildren, React.HTMLProps<HTMLTableCel
 }
 
 export function Table(props: PropsWithChildren & React.HTMLProps<HTMLTableElement>) {
-  return <div className={cx("w-full rounded-8 bg-main-bg text-main-text", props.className)}><table {...props} className='w-full'  /></div>;
+  return <div className={cx("App-box w-full rounded-8 bg-main-bg text-main-text", props.className)}><table {...props} className='w-full'  /></div>;
 }
 export function TableTh(props: TableTdThProps) {
   const { padding = "all", ...rest } = props;

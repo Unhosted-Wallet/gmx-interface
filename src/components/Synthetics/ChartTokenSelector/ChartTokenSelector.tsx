@@ -572,7 +572,7 @@ function MarketListItem({
     return (
       <tr key={token.symbol} className="group/row">
         <td
-          className={cx("cursor-pointer rounded-4 pl-16 pr-4 text-center text-black", rowVerticalPadding)}
+          className={cx("cursor-pointer rounded-4 pl-16 pr-4 text-center", rowVerticalPadding)}
           onClick={handleFavoriteClick}
         >
           <FavoriteStar isFavorite={isFavorite} />
@@ -600,7 +600,7 @@ function MarketListItem({
   }
 
   return (
-    <tr key={token.symbol} className="group/row text-black">
+    <tr key={token.symbol} className="group/row">
       <td
         className={cx(
           "cursor-pointer rounded-4 pl-16 pr-4 text-center hover:bg-[#7044DA] hover:text-white",
