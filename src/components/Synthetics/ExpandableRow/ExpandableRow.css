@@ -3,7 +3,7 @@
 }
 
 .expandable-row-additional-info {
-  border-top: 1px solid var(--secondary-text-color);
+  border-top: 1px solid var(--border-color);
   padding-top: 8px;
   padding-inline: 4px;
 }
