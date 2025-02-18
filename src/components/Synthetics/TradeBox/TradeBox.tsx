@@ -1093,7 +1093,7 @@ export function TradeBox(p: Props) {
           <button
             type="button"
             disabled={!isSwitchTokensAllowed}
-            className="Exchange-swap-ball bg-blue-500"
+            className="Exchange-swap-ball bg-blue-500 color-white p-6"
             onClick={onSwitchTokens}
             data-qa="swap-ball"
           >

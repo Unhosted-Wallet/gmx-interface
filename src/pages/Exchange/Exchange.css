@@ -262,6 +262,10 @@
 .ExchangeChart {
   max-width: 120rem;
   position: relative;
+  border: var(--border-width, 1px) solid var(--border-color);
+  background-color: var(--bg-color-level-1);
+  padding: 8px;
+  border-radius: var(--border-radius-md);
 }
 
 .ExchangeChart-main-price {
@@ -668,10 +672,11 @@ table.Position-list .Exchange-list-item-active {
 .Exchange-swap-section {
   padding: 12px;
   border-radius: var(--border-radius-sm);
-  border: 1px solid var(--border-color);
+  border: var(--border-width, 1px) solid var(--border-color);
   outline: 0.05rem solid transparent;
   outline-offset: -0.1rem;
   color: var(--main-text-color);
+  background-color: var(--bg-color-level-2);
 }
 
 .Exchange-swap-section:focus-within {

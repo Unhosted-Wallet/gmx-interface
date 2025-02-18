@@ -80,9 +80,6 @@
   justify-content: space-between;
 }
 
-.last-dropdown-menu {
-  margin-bottom: 0.8rem;
-}
 .network-popup .Modal-content {
   width: 100%;
   max-width: 29.6rem;
@@ -91,7 +88,7 @@
 .network-option {
   cursor: pointer;
   background: var(--main-bg-color);
-  border: 1px solid var(--border-color);
+  border: var(--border-width, 1px) solid var(--border-color);
   border-radius: 0.4rem;
   padding: 0.8rem 1.5rem;
   display: flex;
@@ -135,8 +132,9 @@
 
 .dropdown-label {
   padding: 0.8rem;
-  font-size: var(--font-size-body-small);
+  font-size: 13px;
   line-height: var(--line-height-body-small);
+  color: var(--secondary-text-color)
 }
 
 .language-popup .Modal-body {
@@ -146,19 +144,17 @@
 }
 
 .language-modal-item {
-  border: 1px solid var(--border-color);
   cursor: pointer;
   border-radius: var(--border-radius-sm);
+  transition: 0.1s cubic-bezier(0.25,0.46,0.45,0.94);
+
   &:hover {
-    border-color: var(--border-color-lighter);
-  }
-  &:active {
-    border-color: var(--border-color-lighter);
+    background-color: var(--bg-color-level-3);
   }
 }
 
 .language-modal-item.active {
-  border: 1px solid var(--border-color-lightest) !important;
+  background-color: var(--bg-color-level-3);
 }
 
 .menu-item-icon {

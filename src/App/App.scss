@@ -141,13 +141,12 @@ $app-card-padding: 1.5rem;
 .App-box-highlight,
 .App-box-solid {
   position: relative;
-  border-radius: 0.4rem;
-  // background: var(--color-slate-800);
-  // background: gray;
-  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md );
+  border: var(--border-width, 1px) solid var(--border-color);
   color: var(--main-text-color) !important;
   font-size: var(--font-size-body-medium);
   box-shadow: var(--shadow-color) 2px 2px 0 0;
+  background-color: var(--bg-color-level-1);
 }
 
 .App-card-space-between {

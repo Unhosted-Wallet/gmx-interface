@@ -151,7 +151,7 @@ export function PoolListItem(props: {
             </span>
           </div>
           <div
-            className="favorite-star flex cursor-pointer items-center rounded-4 p-9 text-16 hover:bg-cold-blue-700 active:bg-cold-blue-500"
+            className="favorite-star flex cursor-pointer items-center rounded-8 p-9 text-16 hover:bg-main-border"
             onClick={handleFavoriteClick}
           >
             <FavoriteStar isFavorite={isFavorite} />

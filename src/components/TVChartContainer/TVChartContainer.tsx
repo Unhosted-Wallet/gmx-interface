@@ -94,7 +94,7 @@ export default function TVChartContainer({
           .setQuantity("")
           .setLineStyle(1)
           .setLineLength(1)
-          .setBodyFont(`normal 12pt "Relative", sans-serif`)
+          .setBodyFont(`normal 12pt "Mona Sans", sans-serif`)
           .setBodyTextColor("#111")
           .setLineColor("#111")
           .setBodyBackgroundColor("#fff")

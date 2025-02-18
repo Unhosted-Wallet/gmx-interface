@@ -1,8 +1,7 @@
 .Footer-wrapper {
   text-align: center;
   padding-top: 4rem;
-  /* background: var(--color-slate-800); */
-  background: #7044da;
+  background-color: var(--bg-color-level-1);
   width: 100vw;
   position: absolute;
   transform: translateX(-50%);

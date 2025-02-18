@@ -18,7 +18,7 @@
   padding-right: 3.2rem;
   // background: transparent 0% 0% no-repeat padding-box;
   background: var(--main-bg-color);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: var(--border-width, 1px) solid var(--border-color);
 
 }
 
