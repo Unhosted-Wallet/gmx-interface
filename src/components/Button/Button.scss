@@ -39,7 +39,7 @@ button {
   &.primary-action {
     background: #7044DA;
     color: var(--color-white);
-    border-radius: 0.3rem;
+    border-radius: var(--border-radius-sm);
     padding: 1.65rem 1.6rem;
 
     &:not([disabled], .disabled):hover {

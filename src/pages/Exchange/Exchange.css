@@ -1,7 +1,9 @@
 .Exchange {
-  max-width: 160rem;
+  max-width: var(--app-max-width, 160rem);
   margin: auto;
   justify-content: space-between;
+  padding-block-end: calc(var(--footer-height) + 24px);
+  min-height: calc(100vh - var(--footer-height));
 }
 
 .Exchange-left {
@@ -677,10 +679,14 @@ table.Position-list .Exchange-list-item-active {
   outline-offset: -0.1rem;
   color: var(--main-text-color);
   background-color: var(--bg-color-level-2);
+  transition: .1s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 
+.Exchange-swap-section:hover {
+  outline-color: var(--border-color-lighter);
+}
 .Exchange-swap-section:focus-within {
-  outline-color: var(--secondary-text-color);
+  outline-color: var(--border-color-lightest);
 }
 
 .Exchange-swap-option-tabs.Tab.Tab__block .Tab-option {

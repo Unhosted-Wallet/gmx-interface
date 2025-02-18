@@ -55,7 +55,7 @@
 
 .SwapBox-info-section {
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-sm);
   border: var(--border-width, 1px) solid var(--border-color);
   margin-bottom: 0.8rem;
   color: var(--main-text-color);

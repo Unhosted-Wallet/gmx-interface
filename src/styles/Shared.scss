@@ -66,11 +66,13 @@ input {
 
 // --main-bg-color: var(--color-slate-900)
 :root {
+  --footer-height: 224px;
+  --app-max-width: 160rem;
   --main-bg-color: #08090a;
   --bg-color-level-1: #0f1011;
   --bg-color-level-2: #141516;
   --bg-color-level-3: #FFFFFF14;
-  --border-width: 2px;
+  --border-width: 1px;
   --border-color: #1E1E1E;
   --border-color-lighter: #333333;
   --border-color-lightest: #555555;
@@ -231,13 +233,12 @@ a.plain {
 }
 
 .default-btn {
-  background-color: var(--accent-color);
+  background-color: var(--main-text-color);
   color: var(--main-bg-color) !important;
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-body-medium);
   line-height: 2rem;
   padding-inline: 1.6rem;
-  text-decoration: none;
   box-sizing: border-box;
   position: relative;
   min-height: 3.6rem;
@@ -405,7 +406,6 @@ button.btn-link:hover .logout-icon {
   min-height: calc(100vh - 62px);
   display: flex;
   flex-direction: column;
-  padding-bottom: calc(4.65rem + 20rem);
   padding-top: 4.65rem;
   background: var(--main-bg-color);
 }
