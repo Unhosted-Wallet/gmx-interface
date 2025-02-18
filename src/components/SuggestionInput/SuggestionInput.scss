@@ -1,17 +1,24 @@
 .Suggestion-input-wrapper {
   position: relative;
 
-  .Suggestion-list {
+  .Suggestion-list-wrapper {
     position: absolute;
-    display: flex;
-    list-style: none;
-    border-radius: var(--border-radius-sm);
+    border: var(--border-width, 1px) solid var(--border-color);
+    background-color: var(--main-bg-color);
+    padding: 6px;
     right: 0;
-    padding: 0;
     margin-top: 1.5px;
     top: 100%;
-    background: var(--unhosted-purple);
     z-index: 1002;
+    border-radius: var(--border-radius-md);
+  }
+  .Suggestion-list {
+    display: flex;
+    list-style: none;
+    border: var(--border-width, 1px) solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    background: var(--bg-color-level-2);
+    padding: 4px;
 
     li {
       padding: 0.5rem 0.75rem;
@@ -20,31 +27,20 @@
       text-align: center;
 
       &:hover {
-        background: rgba(58, 63, 121, 0.5607843137254902);
+        background:var(--bg-color-level-3);
       }
     }
   }
 
   .Suggestion-input {
-    border: 1px solid var(--color-slate-700);
+    border: 1px solid var(--unhosted-purple);
     border-radius: var(--border-radius-sm);
     padding-right: 0.5rem;
     line-height: 1;
     // background: var(--color-slate-700);
 
-    background: var(--unhosted-purple);
-
     label {
       cursor: pointer;
-    }
-
-    &:hover,
-    &:focus {
-      border-color: var(--color-cold-blue-700);
-    }
-
-    &:focus-within {
-      border-color: var(--color-cold-blue-500);
     }
 
     &.input-error {

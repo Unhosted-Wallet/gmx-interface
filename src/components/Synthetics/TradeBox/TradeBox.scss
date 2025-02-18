@@ -1,8 +1,8 @@
 .SwapBox {
   border-radius: var(--border-radius-md);
   padding: 1.5rem;
-  background-color: var(--main-bg-color);
-  border: 1px solid var(--border-color);
+  background-color: var(--bg-color-level-1);
+  border: var(--border-width, 1px) solid var(--border-color);
 }
 
 .SwapBox-option-tabs.Tab__block {
@@ -14,6 +14,7 @@
 .SwapBox-option-tabs.Tab.Tab__block .Tab-option {
   padding: 1.05rem;
   border-radius: var(--border-radius-sm);
+  transition: 0.1s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 
 .SwapBox-option-tabs.Tab.Tab__block .Tab-option.active {
@@ -29,10 +30,6 @@
 
 .SwapBox-asset-options-tabs {
   margin: 1.5rem 0;
-}
-
-.SwapBox-info-section {
-  margin-bottom: 0.8rem;
 }
 
 .SwapBox-form-layout {
@@ -58,10 +55,11 @@
 
 .SwapBox-info-section {
   padding: 0.5rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  border: var(--border-width, 1px) solid var(--border-color);
   margin-bottom: 0.8rem;
   color: var(--main-text-color);
+  background-color: var(--bg-color-level-2);
 }
 
 .SwapBox-info-row {
@@ -70,7 +68,7 @@
 
   .Exchange-info-label {
     opacity: 1;
-    color: var(--color-gray-400);
+    color: var(--secondary-text-color);
   }
 }
 

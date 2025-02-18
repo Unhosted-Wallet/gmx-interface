@@ -24,86 +24,91 @@ export default function Footer({ showRedirectModal, redirectPopupTimestamp }: Pr
   const [isUserFeedbackModalVisible, setIsUserFeedbackModalVisible] = useState(false);
 
   return (
-    <>
-      <div className={cx("Footer-wrapper", { home: isHome })}>
-        <div className="flex w-screen items-center justify-center gap-10">
-          <div className="Footer-logo">
-            <img src={logoImg} alt="MetaMask" />
-          </div>
-          <div className="Footer-logo">
-            <img className="w-80" src={logoImgGmx} alt="MetaMask" />
-          </div>
+    <footer>
+    <div className='Footer-wrapper'>
+      <div className='Footer-logo-wrapper'>
+        <div className="Footer-logo">
+          <img draggable={false}  src={logoImg} alt="Unhosted" />
         </div>
-        <div className="Footer-social-link-block">
-          {SOCIAL_LINKS.map((platform) => {
+        <div className="Footer-logo">
+          <img draggable={false} className="w-80" src={logoImgGmx} alt="GMX" />
+        </div>
+      </div>
+    <div className="Footer-social-link-block">
+      {SOCIAL_LINKS.map((platform) => {
+        return (
+          <TrackingLink
+            key={platform.name}
+            onClick={async () => {
+              await userAnalytics.pushEvent<LandingPageFooterMenuEvent>(
+                {
+                  event: "LandingPageAction",
+                  data: {
+                    action: "FooterMenu",
+                    button: platform.name,
+                  },
+                },
+                { instantSend: true }
+              );
+            }}
+          >
+            <ExternalLink className="App-social-link" href={platform.link}>
+              <div className='social-link'>
+                <img draggable={false} src={platform.icon} alt={platform.name} width={20} height={20} />
+                <span className='social-link-name'>{platform.name}</span>
+              </div>
+            </ExternalLink>
+          </TrackingLink>
+        );
+      })}
+    </div>
+    </div>
+    <div>
+      <div className="Footer-links">
+        {getFooterLinks(isHome).map(({ external, label, link, isAppLink }) => {
+          if (external) {
             return (
-              <TrackingLink
-                key={platform.name}
-                onClick={async () => {
-                  await userAnalytics.pushEvent<LandingPageFooterMenuEvent>(
-                    {
-                      event: "LandingPageAction",
-                      data: {
-                        action: "FooterMenu",
-                        button: platform.name,
-                      },
-                    },
-                    { instantSend: true }
-                  );
-                }}
-              >
-                <ExternalLink className="App-social-link" href={platform.link}>
-                  <img src={platform.icon} alt={platform.name} />
-                </ExternalLink>
-              </TrackingLink>
+              <ExternalLink key={label} href={link} className="Footer-link">
+                {label}
+              </ExternalLink>
             );
-          })}
-        </div>
-        <div className="Footer-links">
-          {getFooterLinks(isHome).map(({ external, label, link, isAppLink }) => {
-            if (external) {
+          }
+          if (isAppLink) {
+            if (shouldShowRedirectModal(redirectPopupTimestamp)) {
               return (
-                <ExternalLink key={label} href={link} className="Footer-link">
+                <div
+                  key={label}
+                  className="Footer-link a"
+                  onClick={() => showRedirectModal && showRedirectModal(link)}
+                >
                   {label}
-                </ExternalLink>
+                </div>
+              );
+            } else {
+              const baseUrl = getAppBaseUrl();
+              return (
+                <a key={label} href={baseUrl + link} className="Footer-link">
+                  {label}
+                </a>
               );
             }
-            if (isAppLink) {
-              if (shouldShowRedirectModal(redirectPopupTimestamp)) {
-                return (
-                  <div
-                    key={label}
-                    className="Footer-link a"
-                    onClick={() => showRedirectModal && showRedirectModal(link)}
-                  >
-                    {label}
-                  </div>
-                );
-              } else {
-                const baseUrl = getAppBaseUrl();
-                return (
-                  <a key={label} href={baseUrl + link} className="Footer-link">
-                    {label}
-                  </a>
-                );
-              }
-            }
-            return (
-              <NavLink key={link} to={link} className="Footer-link" activeClassName="active">
-                {label}
-              </NavLink>
-            );
-          })}
-          {!isHome && (
-            <div className="Footer-link" onClick={() => setIsUserFeedbackModalVisible(true)}>
-              <Trans>Leave feedback</Trans>
-            </div>
-          )}
-        </div>
+          }
+          return (
+            <NavLink key={link} to={link} className="Footer-link" activeClassName="active">
+              {label}
+            </NavLink>
+          );
+        })}
+        {!isHome && (
+          <div className="Footer-link" onClick={() => setIsUserFeedbackModalVisible(true)}>
+            <Trans>Leave feedback</Trans>
+          </div>
+        )}
       </div>
       {!isHome && (
         <UserFeedbackModal isVisible={isUserFeedbackModalVisible} setIsVisible={setIsUserFeedbackModalVisible} />
       )}
-    </>
+    </div>
+  </footer>
   );
 }

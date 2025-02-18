@@ -63,6 +63,9 @@ const colors = {
   main: {
     bg: 'var(--main-bg-color)',
     text: 'var(--main-text-color)',
+    border: 'var(--border-color)',
+    borderLighter: 'var(--border-color-lighter)',
+    borderLightest: 'var(--border-color-lightest)',
   }
 };
 

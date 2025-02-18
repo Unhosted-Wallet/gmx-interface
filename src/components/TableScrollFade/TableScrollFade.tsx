@@ -172,7 +172,7 @@ function ScrollFadeControls({
    */
   gradientColor?: "slate-800" | "slate-900";
 }) {
-  const toColor = gradientColor === "slate-800" ? "to-slate-800" : "to-slate-900";
+  const toColor = gradientColor === "slate-800" ? "to-main-bg" : "to-slate-900";
 
   const [absoluteRef, { height: absoluteHeight }] = useMeasure<HTMLDivElement>();
   const { height: windowHeight } = useWindowSize();

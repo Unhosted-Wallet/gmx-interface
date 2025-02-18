@@ -82,18 +82,20 @@ export default function SuggestionInput({
           onValueChange={handleChange}
           onKeyDown={handleKeyDown}
         />
-        <label className="bg-purple text-white">
+        <label className="text-white">
           <span>{symbol}</span>
         </label>
       </div>
       {suggestionList && isPanelVisible && (
-        <ul className="Suggestion-list">
-          {suggestionList.map((suggestion) => (
-            <li key={suggestion} onMouseDown={() => handleSuggestionClick(suggestion)}>
-              {suggestion}%
-            </li>
-          ))}
-        </ul>
+        <div className='Suggestion-list-wrapper'>
+          <ul className="Suggestion-list">
+            {suggestionList.map((suggestion) => (
+              <li key={suggestion} onMouseDown={() => handleSuggestionClick(suggestion)}>
+                {suggestion}%
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );

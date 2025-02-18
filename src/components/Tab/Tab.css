@@ -60,12 +60,13 @@
 
 .Tab.Tab__inline .Tab-option {
   display: inline-block;
-  font-size: var(--font-size-body-medium);
-  padding: .8rem;
+  padding-inline: 12px;
+  padding-block: 6px;
   border: 1px solid transparent;
   border-radius: var(--border-radius-sm);
   color: var(--secondary-text-color);
-  transition: color 0.2s ease, border-color 0.2s ease
+  font-weight: 500;
+  transition: 0.1s ease-in-out;
 }
 
 
@@ -75,7 +76,8 @@
 
 .Tab.Tab__inline .Tab-option.active {
   pointer-events: none;
-  border: 1px solid var(--main-text-color);
+  /*border: 1px solid var(--main-text-color);*/
+  background-color: var(--bg-color-level-3);
   color: var(--main-text-color);
   box-shadow: 2px 2px 0 0 var(--shadow-color);
 }

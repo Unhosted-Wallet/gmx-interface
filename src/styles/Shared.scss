@@ -35,7 +35,7 @@ code {
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: "Relative", sans-serif;
+  font-family: "Mona Sans", "Relative", sans-serif;
   letter-spacing: 0.05rem;
 }
 
@@ -66,14 +66,20 @@ input {
 
 // --main-bg-color: var(--color-slate-900)
 :root {
-  --main-bg-color: #020003;
+  --footer-height: 224px;
+  --app-max-width: 160rem;
+  --main-bg-color: #08090a;
+  --bg-color-level-1: #0f1011;
+  --bg-color-level-2: #141516;
+  --bg-color-level-3: #FFFFFF14;
+  --border-width: 1px;
   --border-color: #1E1E1E;
   --border-color-lighter: #333333;
   --border-color-lightest: #555555;
   --accent-color: #CCFB82FF;
   --main-text-color: #fafafa;
-  --secondary-text-color: #7e7e7e;
-  --shadow-color: #DFD6E490;
+  --secondary-text-color: #8a8f98;
+  --shadow-color: #DFD6E490000;
   --dark-blue: var(--color-slate-800);
   // --dark-blue-bg: var(--color-slate-800);
   --dark-blue-bg: white;
@@ -88,8 +94,8 @@ input {
   --warning-yellow: var(--color-yellow-500);
   --avax-red: #e84143;
   --arbitrum-blue: #28a0f0;
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
   --error-red: var(--color-red-500);
   --error-red-hover: var(--color-red-400);
   --green: var(--color-green-500);
@@ -227,13 +233,12 @@ a.plain {
 }
 
 .default-btn {
-  background-color: var(--accent-color);
+  background-color: var(--main-text-color);
   color: var(--main-bg-color) !important;
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-body-medium);
   line-height: 2rem;
   padding-inline: 1.6rem;
-  text-decoration: none;
   box-sizing: border-box;
   position: relative;
   min-height: 3.6rem;
@@ -401,7 +406,6 @@ button.btn-link:hover .logout-icon {
   min-height: calc(100vh - 62px);
   display: flex;
   flex-direction: column;
-  padding-bottom: calc(4.65rem + 20rem);
   padding-top: 4.65rem;
   background: var(--main-bg-color);
 }

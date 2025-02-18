@@ -7,15 +7,16 @@
 }
 
 .Claims-card {
-  background: #7044DA;
+  background: var(--bg-color-level-2);
+  border: var(--border-width, 1px) solid var(--border-color);
   font-size: var(--font-size-body-medium);
   margin-bottom: 0.8rem;
   padding-bottom: 1rem;
-  border-radius: 0.4rem;
+  border-radius: var(--border-radius-md);
 }
 
 .Claims-title {
-  border-bottom: 1px solid var(--color-slate-700);
+  border-bottom: var(--border-width, 1px) solid var(--border-color);
   padding: 1rem 1.5rem;
   font-size: 1.5rem;
 }
@@ -53,16 +54,20 @@
   display: inline-flex !important;
   align-items: center;
   border: none;
-  background: rgb(43, 55, 94);
+  background: var(--bg-color-level-3);
   margin-left: auto;
   height: 0;
+
+  &:hover {
+    filter: brightness(125%);
+  }
 }
 
 .Claims-claim-button.secondary {
   cursor: pointer;
   font-size: var(--font-size-body-medium);
   font-weight: normal;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   text-decoration: none;
   box-sizing: border-box;
   position: relative;
@@ -72,9 +77,6 @@
   border: none;
   margin-left: auto;
   height: 0;
-  background-color: transparent;
-
-  color: var(--color-gray-300);
 
   &:hover {
     color: var(--color-white);
@@ -99,12 +101,12 @@
 
 .Claims-hr {
   margin: 0.4rem 1.4rem 0;
-  border-bottom: 1px solid var(--color-slate-700);
+  border-bottom: var(--border-width, 1px) solid var(--border-color);
 }
 
 .Claims-hr-horizontal {
   margin: 0.8rem 0 0;
-  border-left: 1px solid var(--color-slate-700);
+  border-left: var(--border-width, 1px) solid var(--border-color);
 }
 
 .Claims-loading {

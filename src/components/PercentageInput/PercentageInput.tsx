@@ -162,6 +162,7 @@ export default function PercentageInput({
       </TooltipWithPortal>
 
       {shouldShowPanel && (
+        <div className='Percentage-list-wrapper'>
         <ul className="Percentage-list">
           {suggestions.map((slippage) => (
             <li key={slippage} onMouseDown={onSelectSuggestion(slippage)}>
@@ -169,6 +170,7 @@ export default function PercentageInput({
             </li>
           ))}
         </ul>
+        </div>
       )}
     </div>
   );

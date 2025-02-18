@@ -19,6 +19,7 @@ import language24Icon from "img/ic_language24.svg";
 import settingsIcon from "img/ic_settings_16.svg";
 
 import "./NetworkDropdown.css";
+import { FaChevronDown } from "react-icons/fa";
 
 const LANGUAGE_MODAL_KEY = "LANGUAGE";
 const NETWORK_MODAL_KEY = "NETWORK";
@@ -101,9 +102,9 @@ function NavIcons({ selectorLabel }) {
       <button className="transparent">
         <img className="network-dropdown-icon" src={icon} alt={selectorLabel} />
       </button>
-      <div className="network-dropdown-seperator" />
+      <div className="network-dropdown-separator" />
       <button className="transparent">
-        <HiDotsVertical color="white" size={20} />
+        <FaChevronDown color="white" />
       </button>
     </>
   );

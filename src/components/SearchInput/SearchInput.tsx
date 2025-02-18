@@ -50,7 +50,7 @@ export default function SearchInput({
   }, [setValue]);
 
   return (
-    <div className={cx("relative cursor-pointer rounded-4 border border-gray-800 p-0", className)}>
+    <div className={cx("relative cursor-pointer rounded-8 transition-colors border-2 border-main-border p-0 hover:border-main-borderLighter focus-within:!border-main-borderLightest", className)}>
       <input
         ref={inputRef}
         data-qa={qa}
@@ -60,7 +60,7 @@ export default function SearchInput({
         onChange={handleChange}
         onKeyDown={onKeyDown}
         autoFocus={autoFocus ?? !isSmallerScreen}
-        className={cx("block w-full bg-scroll bg-[12px_center] bg-no-repeat placeholder-slate-100", {
+        className={cx("block w-full bg-scroll bg-[12px_center] bg-no-repeat", {
           "bg-[length:20px_20px] py-10 pl-40 pr-34 text-16": size === "m",
           "bg-[length:15px] py-[8.5px] pl-34 pr-30 text-14 ": size === "s",
         })}
