@@ -248,10 +248,12 @@ a.plain {
   cursor: pointer;
   border: none;
   appearance: none;
+  transition: .1s ease;
 }
 
 .default-btn:hover {
-  background: var(--primary-btn-hover);
+  background: var(--bg-color-level-3);
+  color: var(--main-text-color) !important;
 }
 
 s .default-btn:active {
