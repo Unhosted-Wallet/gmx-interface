@@ -500,7 +500,7 @@ export default function Ecosystem() {
   return (
     <SEO title={getPageTitle(t`Ecosystem Projects`)}>
       <div className="default-container page-layout">
-        <div>
+        <div className='page-container p-24'>
           <PageTitle
             showNetworkIcon={false}
             isTop
@@ -512,7 +512,7 @@ export default function Ecosystem() {
             {gmxPages.map((item) => {
               const linkLabel = item.linkLabel ? item.linkLabel : item.link;
               return (
-                <div className="App-card" key={item.title}>
+                <div className="!bg-main-bgLightest App-card" key={item.title}>
                   <div className="App-card-title">
                     {item.title}
                     <div className="App-card-title-icon">
@@ -558,7 +558,7 @@ export default function Ecosystem() {
             {communityProjects.map((item) => {
               const linkLabel = item.linkLabel ? item.linkLabel : item.link;
               return (
-                <div className="App-card" key={item.title}>
+                <div className="!bg-main-bgLightest App-card" key={item.title}>
                   <div className="App-card-title">
                     {item.title}
                     <div className="App-card-title-icon">
@@ -611,7 +611,7 @@ export default function Ecosystem() {
             {dashboardProjects.map((item) => {
               const linkLabel = item.linkLabel ? item.linkLabel : item.link;
               return (
-                <div className="App-card" key={item.title}>
+                <div className="!bg-main-bgLightest App-card" key={item.title}>
                   <div className="App-card-title">
                     {item.title}
                     <div className="App-card-title-icon">
@@ -659,7 +659,7 @@ export default function Ecosystem() {
             {integrations.map((item) => {
               const linkLabel = item.linkLabel ? item.linkLabel : item.link;
               return (
-                <div key={item.title} className="App-card">
+                <div key={item.title} className="!bg-main-bgLightest App-card">
                   <div className="App-card-title">
                     {item.title}
                     <div className="App-card-title-icon">
@@ -702,7 +702,7 @@ export default function Ecosystem() {
             {telegramGroups.map((item) => {
               const linkLabel = item.linkLabel ? item.linkLabel : item.link;
               return (
-                <div className="App-card" key={item.title}>
+                <div className="!bg-main-bgLightest App-card" key={item.title}>
                   <div className="App-card-title">{item.title}</div>
                   <div className="App-card-divider"></div>
                   <div className="App-card-content">
@@ -726,8 +726,8 @@ export default function Ecosystem() {
             })}
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </SEO>
   );
 }
