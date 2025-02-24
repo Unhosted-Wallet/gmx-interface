@@ -401,6 +401,9 @@ button.btn-link:hover .logout-icon {
   background-color: var(--bg-color-level-1);
   border-radius: var(--border-radius-md);
   margin-block-end: 24px;
+  max-width: var(--default-container-max-width);
+  margin-inline: auto;
+  padding: 24px;
 }
 
 .default-sm-container {
