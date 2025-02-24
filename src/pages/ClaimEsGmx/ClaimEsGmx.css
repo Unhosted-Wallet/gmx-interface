@@ -98,6 +98,17 @@
 .ClaimEsGmx-input-container {
   position: relative;
 }
+.ClaimEsGmx-input-container input {
+  border: 1px solid var(--border-color);
+  transition: border-color .1s cubic-bezier(0.25,0.46,0.45,0.94);
+  border-radius: var(--border-radius-sm);
+  &:hover {
+    border: 1px solid var(--border-color-lighter);
+  }
+  &:focus {
+    border: 1px solid var(--border-color-lightest);
+  }
+}
 
 .ClaimEsGmx-max-button {
   position: absolute;
