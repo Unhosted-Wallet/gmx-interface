@@ -47,7 +47,7 @@ export const TableTr = forwardRef<
       {...props}
       ref={ref}
       className={cx(className, {
-        "border-b border-slate-700 last-of-type:border-b-0": bordered,
+        "border-b border-main-border last-of-type:border-b-0": bordered,
         "": hoverable,
         "cursor-pointer": !!props.onClick,
       })}

@@ -128,7 +128,7 @@ export function GmList({
   }, [marketTokensData, active]);
 
   return (
-    <div className="rounded-4 bg-slate-800">
+    <div className="rounded-8 bg-main-bgLightest border border-main-border">
       <div className="flex flex-wrap items-center justify-between gap-8 px-16 py-8">
         <div className="flex items-center ">
           <span className="text-16">

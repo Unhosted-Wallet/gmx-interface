@@ -72,70 +72,72 @@ export function MarketPoolsPage() {
   return (
     <SEO title={getPageTitle("V2 Pools")}>
       <div className="default-container page-layout">
-        <PageTitle
-          title="V2 Pools"
-          isTop
-          subtitle={
-            <>
-              <Trans>
-                Purchase <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2">GM Tokens</ExternalLink>{" "}
-                to earn fees from swaps and leverage trading.
-              </Trans>
-              <br />
-              <Trans>
-                <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2/#glv-pools">
-                  GLV Vaults
-                </ExternalLink>{" "}
-                include multiple GM Tokens and are automatically rebalanced.
-              </Trans>
-              <br />
-              <Trans>Shift GM Tokens between eligible pools without paying buy/sell fees.</Trans>
-            </>
-          }
-          qa="pools-page"
-        />
-
-        <div className="MarketPoolsPage-content gap-12">
-          <MarketStatsWithComposition
-            marketsTokensApyData={marketsTokensApyData}
-            marketsTokensIncentiveAprData={marketsTokensIncentiveAprData}
-            glvTokensIncentiveAprData={glvTokensIncentiveAprData}
-            marketsTokensLidoAprData={marketsTokensLidoAprData}
-            marketTokensData={depositMarketTokensData}
-            marketsInfoData={marketsInfoData}
-            marketInfo={marketInfo}
-            marketToken={marketToken}
-            glvTokensApyData={glvApyInfoData}
+        <div className="page-container p-24">
+          <PageTitle
+            title="V2 Pools"
+            isTop
+            subtitle={
+              <>
+                <Trans>
+                  Purchase <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2">GM Tokens</ExternalLink>{" "}
+                  to earn fees from swaps and leverage trading.
+                </Trans>
+                <br />
+                <Trans>
+                  <ExternalLink href="https://docs.gmx.io/docs/providing-liquidity/v2/#glv-pools">
+                    GLV Vaults
+                  </ExternalLink>{" "}
+                  include multiple GM Tokens and are automatically rebalanced.
+                </Trans>
+                <br />
+                <Trans>Shift GM Tokens between eligible pools without paying buy/sell fees.</Trans>
+              </>
+            }
+            qa="pools-page"
           />
 
-          <div className="MarketPoolsPage-swap-box" ref={gmSwapBoxRef}>
-            <GmSwapBox
-              selectedMarketAddress={selectedMarketOrGlvKey}
-              onSelectMarket={setSelectedMarketOrGlvKey}
-              selectedMarketForGlv={selectedMarketForGlv}
-              onSelectedMarketForGlv={setSelectedMarketForGlv}
-              operation={operation}
-              mode={mode}
-              onSetMode={setMode}
-              onSetOperation={setOperation}
+          <div className="MarketPoolsPage-content gap-12">
+            <MarketStatsWithComposition
+              marketsTokensApyData={marketsTokensApyData}
+              marketsTokensIncentiveAprData={marketsTokensIncentiveAprData}
+              glvTokensIncentiveAprData={glvTokensIncentiveAprData}
+              marketsTokensLidoAprData={marketsTokensLidoAprData}
+              marketTokensData={depositMarketTokensData}
+              marketsInfoData={marketsInfoData}
+              marketInfo={marketInfo}
+              marketToken={marketToken}
+              glvTokensApyData={glvApyInfoData}
             />
-          </div>
-        </div>
 
-        <div className="Tab-title-section">
-          <div className="Page-title">
-            <Trans>Select a Pool</Trans>
+            <div className="MarketPoolsPage-swap-box" ref={gmSwapBoxRef}>
+              <GmSwapBox
+                selectedMarketAddress={selectedMarketOrGlvKey}
+                onSelectMarket={setSelectedMarketOrGlvKey}
+                selectedMarketForGlv={selectedMarketForGlv}
+                onSelectedMarketForGlv={setSelectedMarketForGlv}
+                operation={operation}
+                mode={mode}
+                onSetMode={setMode}
+                onSetOperation={setOperation}
+              />
+            </div>
           </div>
+
+          <div className="Tab-title-section">
+            <div className="Page-title">
+              <Trans>Select a Pool</Trans>
+            </div>
+          </div>
+          <GmList
+            glvTokensApyData={glvApyInfoData}
+            glvTokensIncentiveAprData={glvTokensIncentiveAprData}
+            marketsTokensApyData={marketsTokensApyData}
+            marketsTokensIncentiveAprData={marketsTokensIncentiveAprData}
+            marketsTokensLidoAprData={marketsTokensLidoAprData}
+            shouldScrollToTop={true}
+            isDeposit
+          />
         </div>
-        <GmList
-          glvTokensApyData={glvApyInfoData}
-          glvTokensIncentiveAprData={glvTokensIncentiveAprData}
-          marketsTokensApyData={marketsTokensApyData}
-          marketsTokensIncentiveAprData={marketsTokensIncentiveAprData}
-          marketsTokensLidoAprData={marketsTokensLidoAprData}
-          shouldScrollToTop={true}
-          isDeposit
-        />
       </div>
       <Footer />
     </SEO>
