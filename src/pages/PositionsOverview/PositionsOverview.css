@@ -1,3 +1,6 @@
+.positions {
+  min-width: min(100%, 1000px);
+}
 .Positions-overview-stats {
   line-height: 1.5;
 }
