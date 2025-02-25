@@ -331,7 +331,7 @@ export default function ClaimEsGmx() {
 
   return (
     <div className="ClaimEsGmx Page page-layout">
-      <div className="default-container">
+      <div className="default-container page-container">
         <div className="Page-title">
           <Trans>Claim esGMX</Trans>
         </div>

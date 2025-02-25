@@ -1,3 +1,4 @@
+a.button,
 button {
   cursor: pointer;
   font-size: var(--font-size-body-medium);
@@ -24,8 +25,8 @@ button {
   &.primary {
     background: #7044DA;
     color: var(--color-white);
-    border-radius: 0.3rem;
-    padding: 1.65rem 1.6rem;
+    border-radius: var(--border-radius-sm);
+    padding: 1.1rem 1.25rem;
 
     // &:not([disabled]):hover {
     //   background: var(--primary-btn-hover);

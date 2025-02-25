@@ -40,6 +40,22 @@ $tabs-threshold: 990px;
   align-items: center;
 }
 
+.LeaderboardContainer__competition-tabs .Tab__block {
+  background: var(--bg-color-level-2);
+  padding: 4px;
+  border-radius: var(--border-radius-sm);
+}
+
+.LeaderboardContainer__competition-tabs .Tab.Tab__block .Tab-option {
+  padding: 1.05rem;
+  border-radius: var(--border-radius-sm);
+  transition: 0.1s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.LeaderboardContainer__competition-tabs .Tab.Tab__block .Tab-option.active {
+  background-color: var(--unhosted-purple);
+}
+
 @media screen and (max-width: 600px) {
   .GlobalLeaderboards .Tab {
     width: unset;
@@ -187,15 +203,15 @@ $tabs-threshold: 990px;
     &-container {
       flex: 1 1;
       margin-right: 1.8rem;
-      background-color: var(--color-slate-800);
+      background-color: var(--bg-color-level-2);
+      border-radius: var(--border-radius-sm);
+      border: var(--border-width) solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-radius: 0.5rem;
       text-align: left;
       padding: 2rem 2rem;
       min-width: 21rem;
-      display: flex;
       flex-direction: column;
 
       &:last-child {
@@ -399,7 +415,8 @@ $tabs-threshold: 990px;
   white-space: nowrap;
 
   &_selected {
-    background: var(--color-slate-500) !important;
+    background: var(--bg-color-level-3) !important;
+    color: var(--main-text-color) !important;
   }
 }
 

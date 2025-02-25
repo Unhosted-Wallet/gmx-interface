@@ -158,7 +158,7 @@ export function OrderList({
   }, []);
 
   return (
-    <div ref={ref} className='App-box'>
+    <div ref={ref}>
       {isContainerSmall && orders.length === 0 && (
         <div className="rounded-4 p-14">{isLoading ? t`Loading...` : t`No open orders`}</div>
       )}

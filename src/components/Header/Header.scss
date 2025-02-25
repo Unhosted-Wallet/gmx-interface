@@ -40,6 +40,10 @@
 .App-header-link-home {
   display: none;
 }
+.App-header-trade-link a {
+  color: var(--main-bg-color) !important;
+  background-color: var(--main-text-color);
+}
 
 .App-header-drawer {
   background: #17182c88 0% 0% no-repeat padding-box;

@@ -1,5 +1,22 @@
 .Referrals {
   padding-top: 4.65rem;
+  min-height: 100vh;
+}
+
+.referral-tab-container .Tab__block {
+  background: var(--unhosted-purple-darker);
+  padding: 4px;
+  border-radius: var(--border-radius-sm);
+}
+
+.referral-tab-container .Tab.Tab__block .Tab-option {
+  padding: 1.05rem;
+  border-radius: var(--border-radius-sm);
+  transition: 0.1s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.referral-tab-container .Tab.Tab__block .Tab-option.active {
+  background-color: var(--unhosted-purple);
 }
 
 .section-center {
@@ -18,10 +35,11 @@
 .referral-card {
   position: relative;
   padding: 2.4rem;
-  border-radius: 1.3rem;
   max-width: 59.2rem;
-  background: var(--color-slate-800);
-  border-radius: 0.4rem;
+  background: var(--bg-color-level-1);
+  border-radius: var(--border-radius-md);
+  border: var(--border-width) solid var(--border-color);
+
 }
 .referral-card .title {
   font-weight: 500;
@@ -43,11 +61,19 @@
 }
 
 .referral-card .card-action input {
-  border: 1px solid var(--color-gray-800);
+  border: var(--border-width) solid var(--border-color);
   font-size: var(--font-size-body-medium);
+  border-radius: var(--border-radius-sm);
   width: 100%;
   box-sizing: border-box;
   margin-right: 1.5rem;
+
+  &:hover {
+    border-color: var(--border-color-lighter)
+  }
+  &:active, &:focus {
+    border-color: var(--border-color-lightest)
+  }
 }
 .referral-body-container .list {
   margin-top: 3.1rem;
@@ -255,9 +281,9 @@
   justify-content: center;
   align-items: center;
   padding: 3rem 1.5rem;
-  border: 1px solid var(--color-slate-700);
-  border-radius: 0.4rem;
-  background: var(--color-slate-800);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background: var(--bg-color-level-1);
   font-size: var(--font-size-body-medium);
   flex-direction: column;
 }

@@ -1,6 +1,7 @@
 .GmSwapBox {
-  border-radius: 0.4rem;
+  border-radius: var(--border-radius-sm);
   padding: 1.5rem;
+  background-color: var(--bg-color-level-2);
 }
 
 .GmSwapBox-asset-options-tabs {
@@ -27,6 +28,8 @@
 .GmSwapBox-form-layout {
   display: flex;
   flex-direction: column;
+  margin-block-end: 8px;
+  gap: 4px;
 
   &.reverse {
     flex-direction: column-reverse;
@@ -52,6 +55,22 @@
 
 .gm-toast {
   line-height: 1.4;
+}
+
+.GmSwapBox .Tab__block {
+  background: var(--unhosted-purple-darker);
+  padding: 4px;
+  border-radius: var(--border-radius-sm);
+}
+
+.GmSwapBox .Tab.Tab__block .Tab-option {
+  padding: 1.05rem;
+  border-radius: var(--border-radius-sm);
+  transition: 0.1s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.GmSwapBox .Tab.Tab__block .Tab-option.active {
+  background-color: var(--unhosted-purple);
 }
 
 @media (max-width: 900px) {

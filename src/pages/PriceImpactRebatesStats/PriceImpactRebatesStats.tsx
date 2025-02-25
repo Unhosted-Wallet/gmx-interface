@@ -32,7 +32,7 @@ export const PriceImpactRebatesStatsPage = memo(() => {
 
   return (
     <div className="default-container page-layout">
-      <div className="flex">
+      <div className="flex pl-8 mb-8">
         <Checkbox isChecked={reviewed} setIsChecked={setReviewed}>
           Incl. reviewed
         </Checkbox>
@@ -66,19 +66,21 @@ export const PriceImpactRebatesStatsPage = memo(() => {
 
 const RebateStatsTable = memo(({ rebateGroups }: { rebateGroups: RebateGroup[] }) => {
   return (
-    <div className="PriceImpactRebatesStatsPage-table">
-      <div className="PriceImpactRebatesStatsPage-row">
-        <div className="PriceImpactRebatesStatsPage-cell-timekey">Timekey</div>
-        <div className="PriceImpactRebatesStatsPage-cell-time">Time</div>
-        <div className="PriceImpactRebatesStatsPage-cell-market">Market</div>
-        <div className="PriceImpactRebatesStatsPage-cell-token">Token</div>
-        <div className="PriceImpactRebatesStatsPage-cell-approved">Factor</div>
-        <div className="PriceImpactRebatesStatsPage-cell-usd">$</div>
-        <div className="PriceImpactRebatesStatsPage-cell-actions"></div>
+    <div className='page-container'>
+      <div className="PriceImpactRebatesStatsPage-table">
+        <div className="PriceImpactRebatesStatsPage-row">
+          <div className="PriceImpactRebatesStatsPage-cell-timekey">Timekey</div>
+          <div className="PriceImpactRebatesStatsPage-cell-time">Time</div>
+          <div className="PriceImpactRebatesStatsPage-cell-market">Market</div>
+          <div className="PriceImpactRebatesStatsPage-cell-token">Token</div>
+          <div className="PriceImpactRebatesStatsPage-cell-approved">Factor</div>
+          <div className="PriceImpactRebatesStatsPage-cell-usd">$</div>
+          <div className="PriceImpactRebatesStatsPage-cell-actions"></div>
+        </div>
+        {rebateGroups.map((group) => (
+          <RebateGroupRow key={group.id} rebateGroup={group} />
+        ))}
       </div>
-      {rebateGroups.map((group) => (
-        <RebateGroupRow key={group.id} rebateGroup={group} />
-      ))}
     </div>
   );
 });

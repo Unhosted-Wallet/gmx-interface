@@ -62,6 +62,9 @@ const colors = {
 
   main: {
     bg: 'var(--main-bg-color)',
+    bgLighter: 'var(--bg-color-level-1)',
+    bgLightest: 'var(--bg-color-level-2)',
+    hover: 'var(--bg-color-level-3)',
     text: 'var(--main-text-color)',
     border: 'var(--border-color)',
     borderLighter: 'var(--border-color-lighter)',

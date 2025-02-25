@@ -9,11 +9,13 @@ import { LeaderboardContainer } from "./components/LeaderboardContainer";
 
 export function LeaderboardPage() {
   return (
-    <div className="page-layout">
-      <LeaderboardContainer />
+    <div className='page-layout'>
+      <div className="page-container">
+        <LeaderboardContainer />
+      </div>
       <Footer />
     </div>
-  );
+);
 }
 
 export function CompetitionRedirect() {
