@@ -57,6 +57,7 @@ export default function BuyGMX() {
   }, [location]);
 
   return (
+    <>
     <div className="BuyGMXGLP default-container page-layout">
       <div className="BuyGMXGLP-container">
         <div className="section-title-block">
@@ -136,6 +137,7 @@ export default function BuyGMX() {
                       imgSrc={icon}
                       imgAlt={exchange.name}
                       newTab
+                      showExternalLinkArrow={false}
                     >
                       {exchange.name}
                     </Button>
@@ -161,6 +163,7 @@ export default function BuyGMX() {
                   const link = exchange.links[chainId];
                   return (
                     <Button
+                      showExternalLinkArrow={false}
                       variant="secondary"
                       textAlign="left"
                       key={exchange.name}
@@ -178,9 +181,10 @@ export default function BuyGMX() {
           </Card>
         </div>
       </div>
-      <Footer />
     </div>
-  );
+  <Footer />
+  </>
+);
 }
 
 function DecentralisedExchanges({ chainId, externalLinks }) {
@@ -201,6 +205,7 @@ function DecentralisedExchanges({ chainId, externalLinks }) {
                 imgAlt={"Uniswap"}
                 to={externalLinks.buyGmx.uniswap}
                 newTab
+                showExternalLinkArrow={false}
               >
                 Uniswap
               </Button>
@@ -224,6 +229,7 @@ function DecentralisedExchanges({ chainId, externalLinks }) {
             </div>
             <div className="buttons-group col-1">
               <Button
+                showExternalLinkArrow={false}
                 variant="secondary"
                 textAlign="left"
                 to={externalLinks.buyGmx.traderjoe}
@@ -246,6 +252,7 @@ function DecentralisedExchanges({ chainId, externalLinks }) {
               const link = exchange.links[chainId];
               return (
                 <Button
+                  showExternalLinkArrow={false}
                   variant="secondary"
                   textAlign="left"
                   key={exchange.name}
@@ -270,6 +277,7 @@ function DecentralisedExchanges({ chainId, externalLinks }) {
               const link = exchange.links[chainId];
               return (
                 <Button
+                  showExternalLinkArrow={false}
                   variant="secondary"
                   textAlign="left"
                   key={exchange.name}
@@ -291,6 +299,7 @@ function DecentralisedExchanges({ chainId, externalLinks }) {
             </div>
             <div className="buttons-group col-1">
               <Button
+                showExternalLinkArrow={false}
                 variant="secondary"
                 textAlign="left"
                 to="https://app.bondprotocol.finance/#/tokens/42161/0xfc5a1a6eb076a2c7ad06ed22c90d7e710e35ad0a"
@@ -322,6 +331,7 @@ function CentralisedExchanges({ chainId }) {
               const link = exchange.links[chainId];
               return (
                 <Button
+                  showExternalLinkArrow={false}
                   variant="secondary"
                   textAlign="left"
                   key={exchange.name}
@@ -348,6 +358,7 @@ function CentralisedExchanges({ chainId }) {
 
               return (
                 <Button
+                  showExternalLinkArrow={false}
                   variant="secondary"
                   textAlign="left"
                   key={exchange.name}

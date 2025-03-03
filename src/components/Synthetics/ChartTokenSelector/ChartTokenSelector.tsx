@@ -248,12 +248,12 @@ function MarketsList() {
     ? cx("px-6 first-of-type:pl-8 last-of-type:pr-8")
     : cx("px-5 first-of-type:pl-16 last-of-type:pr-16");
   const thClassName = cx(
-    "text-body-medium sticky top-0 border-b text-left font-normal uppercase text-white first-of-type:text-left last-of-type:[&:not(:first-of-type)]:text-right",
+    "text-body-medium bg-main-bgLightest sticky z-10 top-0 border-b border-main-border text-left font-normal capitalize first-of-type:text-left last-of-type:[&:not(:first-of-type)]:text-right",
     rowVerticalPadding,
     rowHorizontalPadding
   );
   const tdClassName = cx(
-    "text-body-medium cursor-pointer rounded-4 last-of-type:text-right hover:bg-[#7044DA] hover:text-white",
+    "text-body-medium cursor-pointer last-of-type:text-right hover:text-white",
     rowVerticalPadding,
     rowHorizontalPadding
   );
@@ -314,7 +314,7 @@ function MarketsList() {
           })}
         >
           <table className="text-sm w-full border-separate border-spacing-0">
-            <thead className="bg-[#7044DA]">
+            <thead>
               <tr>
                 <th className={thClassName} colSpan={2}>
                   <Trans>Market</Trans>
@@ -323,14 +323,14 @@ function MarketsList() {
                   <>
                     <th className={thClassName}>
                       <Sorter {...getSorterProps("lastPrice")}>
-                        {isSmallMobile ? <Trans>PRICE</Trans> : <Trans>LAST PRICE</Trans>}
+                        {isSmallMobile ? <Trans>Price</Trans> : <Trans>Last price</Trans>}
                       </Sorter>
                     </th>
                     {!isMobile && (
                       <>
                         <th className={thClassName}>
                           <Sorter {...getSorterProps("24hChange")}>
-                            <Trans>24H%</Trans>
+                            <Trans>24h%</Trans>
                           </Sorter>
                         </th>
                         <th className={thClassName}>
@@ -340,14 +340,14 @@ function MarketsList() {
                         </th>
                         <th className={thClassName} colSpan={2}>
                           <Sorter {...getSorterProps("combinedOpenInterest")}>
-                            <Trans>OPEN INTEREST</Trans>
+                            <Trans>Open interest</Trans>
                           </Sorter>
                         </th>
                       </>
                     )}
                     <th className={thClassName} colSpan={2}>
                       <Sorter {...getSorterProps("combinedAvailableLiquidity")}>
-                        {isSmallMobile ? <Trans>AVAIL. LIQ.</Trans> : <Trans>AVAILABLE LIQ.</Trans>}
+                        {isSmallMobile ? <Trans>Avail. Liq.</Trans> : <Trans>Available liq.</Trans>}
                       </Sorter>
                     </th>
                   </>
@@ -570,16 +570,18 @@ function MarketListItem({
 
   if (isSwap) {
     return (
-      <tr key={token.symbol} className="group/row">
+      <tr key={token.symbol} className="group/row bg-main-bgLighter hover:bg-main-hover transition-colors duration-100">
         <td
-          className={cx("cursor-pointer rounded-4 pl-16 pr-4 text-center text-black", rowVerticalPadding)}
+          className={cx("cursor-pointer pl-8 text-center", rowVerticalPadding)}
           onClick={handleFavoriteClick}
         >
-          <FavoriteStar isFavorite={isFavorite} />
+          <div className="p-8 rounded-4 hover:bg-main-hover transition-colors duration-100">
+            <FavoriteStar isFavorite={isFavorite} />
+          </div>
         </td>
         <td
           className={cx(
-            "text-body-medium w-full cursor-pointer rounded-4 hover:bg-[#7044DA] hover:text-white",
+            "text-body-medium w-full cursor-pointer",
             rowVerticalPadding,
             rowHorizontalPadding
           )}
@@ -600,19 +602,21 @@ function MarketListItem({
   }
 
   return (
-    <tr key={token.symbol} className="group/row text-black">
+    <tr key={token.symbol} className="group/row bg-main-bgLighter hover:bg-main-hover transition-colors duration-100">
       <td
         className={cx(
-          "cursor-pointer rounded-4 pl-16 pr-4 text-center hover:bg-[#7044DA] hover:text-white",
+          "cursor-pointer pl-8 text-center",
           rowVerticalPadding
         )}
         onClick={handleFavoriteClick}
       >
-        <FavoriteStar isFavorite={isFavorite} />
+        <div className="p-8 rounded-4 hover:bg-main-hover transition-colors duration-100">
+          <FavoriteStar isFavorite={isFavorite} />
+        </div>
       </td>
       <td
         className={cx(
-          "text-body-medium cursor-pointer rounded-4 pl-4 hover:bg-[#7044DA] hover:text-white",
+          "text-body-medium cursor-pointer pl-4 hover:text-white",
           rowVerticalPadding,
           "pr-8"
         )}
@@ -627,7 +631,7 @@ function MarketListItem({
           />
           <span className="flex flex-wrap items-center gap-4">
             <span className="-mt-2 leading-1">{getMarketIndexName({ indexToken: token, isSpotOnly: false })}</span>
-            <span className="text-body-small rounded-2 bg-[#7044DA] px-2 pb-3 pt-1 leading-1 text-white">
+            <span className="text-body-small rounded-2  px-2 pb-3 pt-1 leading-1 text-white">
               {maxLeverage ? `${maxLeverage}x` : "-"}
             </span>
           </span>

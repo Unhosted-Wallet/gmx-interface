@@ -149,7 +149,7 @@ function Referrals() {
       </div>
       <Footer />
     </SEO>
-  );
+);
 }
 
 export default Referrals;

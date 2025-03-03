@@ -557,7 +557,7 @@ export default function OrdersList(props) {
 
   return (
     <>
-      <table className="Exchange-list Orders App-box large">
+      <table className="Exchange-list Orders large">
         <tbody>
           {renderHead()}
           {renderEmptyRow()}

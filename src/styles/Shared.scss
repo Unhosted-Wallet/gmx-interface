@@ -233,8 +233,8 @@ a.plain {
 }
 
 .default-btn {
-  background-color: var(--main-text-color);
-  color: var(--main-bg-color) !important;
+  //background-color: var(--main-text-color);
+  //color: var(--main-bg-color) !important;
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-body-medium);
   line-height: 2rem;
@@ -248,10 +248,12 @@ a.plain {
   cursor: pointer;
   border: none;
   appearance: none;
+  transition: .1s ease;
 }
 
 .default-btn:hover {
-  background: var(--primary-btn-hover);
+  background: var(--bg-color-level-3);
+  color: var(--main-text-color) !important;
 }
 
 s .default-btn:active {
@@ -395,7 +397,13 @@ button.btn-link:hover .logout-icon {
 }
 
 .page-container {
-  padding-top: 6.2rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color-level-1);
+  border-radius: var(--border-radius-md);
+  margin-block-end: 24px;
+  max-width: var(--default-container-max-width);
+  margin-inline: auto;
+  padding: 24px;
 }
 
 .default-sm-container {
@@ -403,11 +411,11 @@ button.btn-link:hover .logout-icon {
 }
 
 .page-layout {
-  min-height: calc(100vh - 62px);
   display: flex;
   flex-direction: column;
   padding-top: 4.65rem;
   background: var(--main-bg-color);
+  padding-block-end: var(--footer-height);
 }
 
 .default-cursor.App-cta {

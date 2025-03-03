@@ -89,8 +89,8 @@ export function SyntheticsStats() {
   });
 
   return (
-    <div className="SyntheticsStats mt-20">
-      <div className="SyntheticsStats-table-wrap">
+    <div className="page-layout SyntheticsStats mt-20">
+      <div className="page-container SyntheticsStats-table-wrap">
         <table>
           <thead>
             <tr>

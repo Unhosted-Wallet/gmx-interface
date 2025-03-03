@@ -110,7 +110,7 @@ export default function CompleteAccountTransfer() {
           <Trans>Continue</Trans>
         </Link>
       </Modal>
-      <div className="default-container !m-0 pb-16">
+      <div className="default-container !m-0 pb-16 page-container">
         <div className="Page-title">
           <Trans>Complete Account Transfer</Trans>
         </div>

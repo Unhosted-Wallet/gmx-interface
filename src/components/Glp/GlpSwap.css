@@ -44,9 +44,10 @@
 
 .GlpSwap-content .GlpSwap-box {
   max-width: 47.95rem;
-  border-radius: 0.4rem;
+  border-radius: var(--border-radius-md);
   padding: 1.5rem;
   padding-top: 0;
+  background-color: var(--bg-color-level-1);
 }
 
 .GlpSwap-box .Exchange-swap-option-tabs {
@@ -86,11 +87,13 @@
 }
 
 .GlpSwap-token-list {
-  border-radius: 4px;
-  background: var(--color-slate-800);
+  border-radius: var(--border-radius-md);
+  background: var(--bg-color-level-1);
   padding: 1.5rem;
   padding-top: 0;
+  border: var(--border-width) solid var(--border-color);
   text-align: left;
+  margin-block-end: 24px;
 }
 
 .GlpSwap-token-list-content {
@@ -120,6 +123,7 @@
 
 .GlpSwap-cta {
   margin: 0 auto;
+  width: 100%;
   text-align: center;
   padding-top: 0;
 }
@@ -221,6 +225,7 @@
 }
 
 .AppOrder-ball {
+  padding: 0;
   position: absolute;
   width: 3.5rem;
   height: 3.5rem;
@@ -301,4 +306,26 @@
     grid-gap: 1.5rem;
     margin-top: 0.8rem;
   }
+}
+
+.GlpSwap-box-form {
+  display: grid;
+  gap: 8px;
+  justify-items: stretch;
+}
+
+.GlpSwap-box .Tab__block {
+  background: var(--unhosted-purple-darker);
+  padding: 4px;
+  border-radius: var(--border-radius-sm);
+}
+
+.GlpSwap-box .Tab.Tab__block .Tab-option {
+  padding: 1.05rem;
+  border-radius: var(--border-radius-sm);
+  transition: 0.1s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.GlpSwap-box .Tab.Tab__block .Tab-option.active {
+  background-color: var(--unhosted-purple);
 }

@@ -110,7 +110,7 @@ export function LeaderboardPositionsTable({ positions }: { positions: RemoteData
   );
 
   return (
-    <div className="rounded-4 bg-slate-800">
+    <div className="rounded-8 border border-main-border bg-main-bgLightest">
       <div className="TableBox__head">
         <SearchInput
           placeholder={t`Search Address`}

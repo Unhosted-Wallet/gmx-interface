@@ -5,8 +5,16 @@
 
 .PriceImpactRebatesStatsPage-row {
   display: flex;
+  justify-content: center;
 }
 
+.PriceImpactRebatesStatsPage-row:first-child div  {
+  font-size: 13px;
+}
+
+.PriceImpactRebatesStatsPage-row:last-child div {
+  border-bottom: none;
+}
 .PriceImpactRebatesStatsPage-row div {
   // border-right: 1px solid #e8e8e8;
   border-bottom: 1px solid var(--color-gray-900);

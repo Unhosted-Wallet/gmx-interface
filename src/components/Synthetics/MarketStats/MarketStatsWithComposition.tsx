@@ -321,7 +321,7 @@ export function MarketStatsWithComposition(p: Props) {
 
   return (
     <div
-      className={cx("flex flex-grow bg-slate-800", {
+      className={cx("flex flex-grow bg-main-bgLightest rounded-8 p-16 border border-main-border", {
         "flex-row": canFitCompositionOnRow,
         "flex-col": !canFitCompositionOnRow,
       })}
@@ -483,8 +483,8 @@ export function MarketStatsWithComposition(p: Props) {
       </div>
       <div
         className={cx("flex-grow", {
-          "w-[100%] border-l border-l-slate-700": canFitCompositionOnRow,
-          "mt-20 border-t border-t-slate-700": !canFitCompositionOnRow,
+          "w-[100%] border-l border-l-main-border": canFitCompositionOnRow,
+          "mt-20 border-t border-t-main-border": !canFitCompositionOnRow,
           "min-h-[498px]": largeMarketsTableEntries && canFitCompositionOnRow,
         })}
       >
@@ -498,7 +498,7 @@ export function MarketStatsWithComposition(p: Props) {
             />
           </div>
 
-          <div className="relative flex-grow overflow-y-scroll">
+          <div className="relative flex-grow overflow-y-auto">
             <div className={cx({ absolute: canFitCompositionOnRow })}>
               <CompositionTableGm marketInfo={marketInfo} />
             </div>

@@ -54,7 +54,7 @@ function MarketsListDesktop({ chainId, indexTokensStats }: { chainId: number; in
   );
 
   return (
-    <div className="my-15 rounded-4 bg-slate-800 text-left">
+    <div className="my-15 rounded-8 bg-main-bgLighter text-left border border-main-border">
       <div className="flex items-center px-16 py-8 text-16">
         <Trans>GM Pools</Trans>
         <img className="ml-5 mr-10" src={getIcon(chainId, "network")} width="16" alt="Network Icon" />

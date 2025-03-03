@@ -1044,6 +1044,7 @@ export default function GlpSwap(props) {
         </div>
         <div className="GlpSwap-box App-box">
           <form
+            className='GlpSwap-box-form'
             onSubmit={(e) => {
               e.preventDefault();
               onClickPrimary();

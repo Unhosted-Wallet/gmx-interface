@@ -8,6 +8,7 @@ import { t, Trans } from "@lingui/macro";
 import { callContract } from "lib/contracts";
 import { useChainId } from "lib/chains";
 import useWallet from "lib/wallets/useWallet";
+import Button from "components/Button/Button.tsx";
 
 export default function NftWallet() {
   const [nftAddress, setNftAddress] = useState("");
@@ -67,40 +68,47 @@ export default function NftWallet() {
 
   return (
     <div className="NftWallet Page page-layout">
-      <div className="Page-title-section">
-        <div className="Page-title">
-          <Trans>NFT Wallet</Trans>
-        </div>
-      </div>
-      <div className="NftWallet-content">
-        <div className="NftWallet-row">
-          <label>
-            <Trans>Receiver Address</Trans>
-          </label>
-          <div>
-            <input type="text" value={receiver} onChange={(e) => setReceiver(e.target.value)} />
+      <div className="page-container">
+        <div className="Page-title-section !px-0">
+          <div className="Page-title">
+            <Trans>NFT Wallet</Trans>
           </div>
         </div>
-        <div className="NftWallet-row">
-          <label>
-            <Trans>NFT Address</Trans>
-          </label>
-          <div>
-            <input type="text" value={nftAddress} onChange={(e) => setNftAddress(e.target.value)} />
+        <div className="NftWallet-content">
+          <div className="NftWallet-row">
+            <label>
+              <Trans>Receiver Address</Trans>
+            </label>
+            <div>
+              <input type="text" value={receiver} onChange={(e) => setReceiver(e.target.value)} />
+            </div>
           </div>
-        </div>
-        <div className="NftWallet-row">
-          <label>
-            <Trans>NFT ID</Trans>
-          </label>
-          <div>
-            <input type="number" value={nftId} onChange={(e) => setNftId(e.target.value)} />
+          <div className="NftWallet-row">
+            <label>
+              <Trans>NFT Address</Trans>
+            </label>
+            <div>
+              <input type="text" value={nftAddress} onChange={(e) => setNftAddress(e.target.value)} />
+            </div>
           </div>
-        </div>
-        <div className="NftWallet-row">
-          <button className="App-cta Exchange-swap-button" disabled={!isPrimaryEnabled()} onClick={() => transferNft()}>
-            {getPrimaryText()}
-          </button>
+          <div className="NftWallet-row">
+            <label>
+              <Trans>NFT ID</Trans>
+            </label>
+            <div>
+              <input type="number" value={nftId} onChange={(e) => setNftId(e.target.value)} />
+            </div>
+          </div>
+          <div className="NftWallet-row">
+            <Button
+              variant='primary'
+              className="App-cta Exchange-swap-button"
+              disabled={!isPrimaryEnabled()}
+              onClick={() => transferNft()}
+            >
+              {getPrimaryText()}
+            </Button>
+          </div>
         </div>
       </div>
     </div>
